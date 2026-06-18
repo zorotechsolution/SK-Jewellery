@@ -1,0 +1,588 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Bespoke Customised Jewellery – SK jewellery & gold</title>
+  <meta name="description" content="Bring your jewellery dreams to life with SK jewellery & gold's Bespoke Customisation service. Handcrafted in 22K and 18K gold by Nagercoil's finest artisans." />
+  <link rel="icon" type="image/jpeg" href="images/SK Gold Logo.jpg" />
+  <link rel="stylesheet" href="style.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;0,900;1,400;1,600&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+  <style>
+    /* ── CUSTOMISATION PAGE SPECIFIC STYLES ── */
+
+    /* Hero Banner */
+    .custom-hero {
+      position: relative;
+      min-height: 56vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: linear-gradient(135deg, #1f1405 0%, #3d2203 60%, #5c3406 100%);
+      overflow: hidden;
+      padding: 120px 24px 80px;
+    }
+    .custom-hero-bg {
+      position: absolute;
+      inset: 0;
+      background-image: url('images/Customised-Jewels.png');
+      background-size: cover;
+      background-position: center center;
+      opacity: 0.18;
+      filter: blur(2px);
+    }
+    .custom-hero-pattern {
+      position: absolute;
+      inset: 0;
+      background-image:
+        radial-gradient(circle at 15% 50%, rgba(212,175,55,0.18) 0%, transparent 50%),
+        radial-gradient(circle at 85% 50%, rgba(212,175,55,0.12) 0%, transparent 50%);
+      pointer-events: none;
+    }
+    .custom-hero-content {
+      position: relative;
+      z-index: 2;
+      text-align: center;
+      color: var(--white);
+    }
+    .custom-hero-badge {
+      display: inline-block;
+      font-size: 11px;
+      letter-spacing: 4px;
+      text-transform: uppercase;
+      color: var(--gold-soft);
+      border: 1px solid rgba(212,175,55,0.5);
+      padding: 7px 22px;
+      border-radius: 50px;
+      margin-bottom: 28px;
+      backdrop-filter: blur(8px);
+      background: rgba(255,255,255,0.06);
+    }
+    .custom-hero-title {
+      font-family: var(--font-display);
+      font-size: clamp(38px, 6vw, 72px);
+      font-weight: 900;
+      line-height: 1.05;
+      margin-bottom: 20px;
+    }
+    .custom-hero-title span {
+      display: block;
+      color: var(--gold-soft);
+      font-style: italic;
+      font-size: clamp(24px, 3.5vw, 42px);
+      font-weight: 600;
+    }
+    .custom-hero-desc {
+      font-size: clamp(14px, 1.6vw, 17px);
+      color: rgba(255,255,255,0.82);
+      max-width: 580px;
+      margin: 0 auto 36px;
+      line-height: 1.75;
+    }
+    .custom-back-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 12px;
+      font-weight: 600;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      color: var(--gold-soft);
+      border: 1px solid rgba(212,175,55,0.45);
+      padding: 10px 24px;
+      border-radius: 2px;
+      transition: var(--transition);
+      backdrop-filter: blur(6px);
+      background: rgba(255,255,255,0.06);
+    }
+    .custom-back-btn:hover {
+      background: var(--gold);
+      color: var(--maroon-dark);
+      border-color: var(--gold);
+    }
+
+    /* ── INTRO STRIP ── */
+    .custom-intro {
+      background: var(--ivory);
+      padding: 48px 0;
+      text-align: center;
+      border-bottom: 1px solid rgba(212,175,55,0.2);
+    }
+    .custom-intro-inner {
+      max-width: 760px;
+      margin: 0 auto;
+      padding: 0 24px;
+    }
+    .custom-intro p {
+      font-family: var(--font-display);
+      font-size: clamp(16px, 2vw, 20px);
+      font-style: italic;
+      color: var(--maroon);
+      line-height: 1.7;
+    }
+
+    /* ── THE JOURNEY ── */
+    .journey-section {
+      padding: 96px 0;
+      background: var(--white);
+    }
+    .journey-timeline {
+      max-width: 900px;
+      margin: 60px auto 0;
+      position: relative;
+      padding: 0 24px;
+    }
+    .journey-timeline::before {
+      content: '';
+      position: absolute;
+      top: 0; bottom: 0; left: 50%;
+      width: 2px;
+      background: linear-gradient(to bottom, var(--gold) 0%, var(--gold-soft) 80%, transparent 100%);
+      transform: translateX(-50%);
+    }
+    .journey-step {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 80px;
+      position: relative;
+    }
+    .journey-step:last-child {
+      margin-bottom: 0;
+    }
+    .journey-content {
+      width: 44%;
+      background: var(--ivory);
+      padding: 32px;
+      border-radius: 2px;
+      border: 1px solid rgba(212,175,55,0.2);
+      box-shadow: var(--shadow-soft);
+      position: relative;
+    }
+    .journey-content h3 {
+      font-family: var(--font-display);
+      font-size: 20px;
+      color: var(--maroon);
+      margin-bottom: 12px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+    .journey-content h3 span {
+      color: var(--gold-dark);
+      font-weight: 700;
+    }
+    .journey-content p {
+      font-size: 14px;
+      color: var(--text-mid);
+      line-height: 1.75;
+    }
+    .journey-icon {
+      width: 50px;
+      height: 50px;
+      border-radius: 50%;
+      background: linear-gradient(135deg, var(--gold), var(--gold-soft));
+      border: 4px solid var(--white);
+      box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--maroon-dark);
+      font-size: 16px;
+      font-weight: 700;
+      position: absolute;
+      left: 50%;
+      transform: translateX(-50%);
+      z-index: 2;
+    }
+    .journey-step:nth-child(even) {
+      flex-direction: row-reverse;
+    }
+
+    /* ── FORM SECTION ── */
+    .enquiry-section {
+      background: var(--ivory);
+      padding: 96px 0;
+      border-top: 1px solid rgba(212,175,55,0.15);
+      border-bottom: 1px solid rgba(212,175,55,0.15);
+    }
+    .form-container {
+      max-width: 680px;
+      margin: 0 auto;
+      background: var(--white);
+      padding: 48px;
+      border-radius: 2px;
+      border: 1px solid rgba(212,175,55,0.25);
+      box-shadow: var(--shadow-soft);
+    }
+    .custom-form {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 24px;
+    }
+    .form-group {
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+    }
+    .form-group.full-width {
+      grid-column: 1 / -1;
+    }
+    .form-group label {
+      font-size: 12px;
+      font-weight: 600;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+      color: var(--text-dark);
+    }
+    .form-group input,
+    .form-group select,
+    .form-group textarea {
+      padding: 12px 16px;
+      border: 1px solid rgba(212,175,55,0.3);
+      font-family: inherit;
+      font-size: 14px;
+      color: var(--text-dark);
+      background: var(--white);
+      outline: none;
+      transition: var(--transition);
+      border-radius: 2px;
+    }
+    .form-group input:focus,
+    .form-group select:focus,
+    .form-group textarea:focus {
+      border-color: var(--maroon);
+      box-shadow: 0 0 0 3px rgba(106, 17, 34, 0.08);
+    }
+    .submit-btn {
+      grid-column: 1 / -1;
+      padding: 16px;
+      font-family: inherit;
+      font-size: 12px;
+      font-weight: 700;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      color: var(--maroon-dark);
+      background: linear-gradient(135deg, var(--gold), var(--gold-soft));
+      border: none;
+      border-radius: 2px;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      box-shadow: 0 4px 20px rgba(212,175,55,0.35);
+      transition: var(--transition);
+    }
+    .submit-btn:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 8px 30px rgba(212,175,55,0.55);
+    }
+
+    /* ── RESPONSIVE ── */
+    @media (max-width: 768px) {
+      .journey-timeline::before {
+        left: 24px;
+      }
+      .journey-step {
+        flex-direction: column;
+        align-items: flex-start;
+        margin-bottom: 50px;
+      }
+      .journey-step:nth-child(even) {
+        flex-direction: column;
+      }
+      .journey-content {
+        width: calc(100% - 32px);
+        margin-left: 56px;
+      }
+      .journey-icon {
+        left: 24px;
+        transform: translateX(-50%);
+      }
+      .custom-form {
+        grid-template-columns: 1fr;
+      }
+      .form-container {
+        padding: 32px 24px;
+      }
+      .journey-section,
+      .enquiry-section {
+        padding: 64px 0;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- NAVBAR -->
+  <nav id="navbar" class="navbar-dark-bg">
+    <div class="nav-container">
+      <a href="index.html" class="nav-brand">
+        <img src="images/SK Gold Logo.jpg" alt="SK Jewellery logo" class="nav-logo" />
+        <span class="brand-text">SK jewellery & gold</span>
+      </a>
+      <button class="nav-toggle" id="navToggle" aria-label="Toggle menu">
+        <span></span><span></span><span></span>
+      </button>
+      <ul class="nav-links" id="navLinks">
+        <li><a href="index.html#home">Home</a></li>
+        <li><a href="index.html#about">About</a></li>
+        <li><a href="index.html#collections">Collections</a></li>
+        <li><a href="index.html#why-us">Why Us</a></li>
+        <li><a href="index.html#testimonials">Reviews</a></li>
+        <li><a href="index.html#contact" class="nav-cta">Contact</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- HERO BANNER -->
+  <section class="custom-hero">
+    <div class="custom-hero-bg"></div>
+    <div class="custom-hero-pattern"></div>
+    <div class="custom-hero-content reveal">
+      <div class="custom-hero-badge">✦ Customised Jewellery Service ✦</div>
+      <h1 class="custom-hero-title">
+        Bespoke Jewellery
+        <span>Your Dream, Crafted in Gold</span>
+      </h1>
+      <p class="custom-hero-desc">
+        At SK jewellery & gold, we translate your personal inspirations, family heirlooms, and unique design sketches into magnificent gold creations crafted exclusively for you.
+      </p>
+      <a href="index.html#collections" class="custom-back-btn">
+        <i class="fa-solid fa-arrow-left"></i> Back to Collections
+      </a>
+    </div>
+  </section>
+
+  <!-- INTRO STRIP -->
+  <div class="custom-intro">
+    <div class="custom-intro-inner">
+      <p>"Jewellery isn't just an accessory; it's a reflection of your soul. Let us craft a piece that tells your unique story."</p>
+    </div>
+  </div>
+
+  <!-- THE CUSTOMISATION JOURNEY -->
+  <section class="journey-section">
+    <div class="container">
+      <div class="section-header reveal">
+        <p class="section-eyebrow">How It Works</p>
+        <h2 class="section-title">The Bespoke Design<br/><em>Journey</em></h2>
+        <div class="gold-divider center"></div>
+        <p class="section-desc">Experience the beautiful, step-by-step process of co-creating your custom jewellery piece with our master artisans.</p>
+      </div>
+
+      <div class="journey-timeline">
+        
+        <!-- STEP 1 -->
+        <div class="journey-step reveal">
+          <div class="journey-icon">01</div>
+          <div class="journey-content">
+            <h3><span>01.</span> Design Consultation</h3>
+            <p>Share your ideas, reference images, or rough sketches with our team. We discuss your preferences regarding style, size, metal weight, gemstones, and budget to align on a creative direction.</p>
+          </div>
+        </div>
+
+        <!-- STEP 2 -->
+        <div class="journey-step reveal">
+          <div class="journey-icon">02</div>
+          <div class="journey-content">
+            <h3><span>02.</span> CAD &amp; 3D Visualisation</h3>
+            <p>Our digital design specialists create a detailed 3D computer-aided model (CAD) of your piece. This allows you to view your jewellery from all angles and make refinements before crafting begins.</p>
+          </div>
+        </div>
+
+        <!-- STEP 3 -->
+        <div class="journey-step reveal">
+          <div class="journey-icon">03</div>
+          <div class="journey-content">
+            <h3><span>03.</span> Curation of Materials</h3>
+            <p>Choose your gold purity preference (certified 22K or 18K) and select diamonds or specific colored gemstones. We source only conflict-free, ethically sourced, certified precious stones.</p>
+          </div>
+        </div>
+
+        <!-- STEP 4 -->
+        <div class="journey-step reveal">
+          <div class="journey-icon">04</div>
+          <div class="journey-content">
+            <h3><span>04.</span> Masterful Crafting</h3>
+            <p>Our experienced karigars (goldsmiths) in Nagercoil handcraft your piece using ancient techniques coupled with modern precision tools. Every curve, polish, and stone setting is carefully executed.</p>
+          </div>
+        </div>
+
+        <!-- STEP 5 -->
+        <div class="journey-step reveal">
+          <div class="journey-icon">05</div>
+          <div class="journey-content">
+            <h3><span>05.</span> Hallmark &amp; Delivery</h3>
+            <p>Your finished piece undergoes strict quality inspection and is certified with the government-approved BIS Hallmark for gold purity. You receive your heirloom jewellery boxed beautifully and ready to cherish.</p>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ENQUIRY FORM SECTION -->
+  <section class="enquiry-section">
+    <div class="container">
+      <div class="section-header reveal">
+        <p class="section-eyebrow">Start Your Custom Order</p>
+        <h2 class="section-title">Bespoke Design<br/><em>Enquiry Form</em></h2>
+        <div class="gold-divider center"></div>
+        <p class="section-desc">Submit your design interests below, and our jewellery consultant will contact you to start designing.</p>
+      </div>
+
+      <div class="form-container reveal">
+        <form class="custom-form" id="customEnquiryForm">
+          <div class="form-group">
+            <label for="fullName">Full Name</label>
+            <input type="text" id="fullName" required placeholder="Enter your name" />
+          </div>
+          <div class="form-group">
+            <label for="phoneNum">Phone Number</label>
+            <input type="tel" id="phoneNum" required placeholder="Enter mobile number" />
+          </div>
+          <div class="form-group">
+            <label for="jewelType">Type of Jewellery</label>
+            <select id="jewelType" required>
+              <option value="">Select Type</option>
+              <option value="Necklace">Necklace / Haar</option>
+              <option value="Bangle">Bangles / Kada</option>
+              <option value="Ring">Ring</option>
+              <option value="Earrings">Earrings / Jhumka</option>
+              <option value="BridalSet">Bridal Set</option>
+              <option value="Other">Other Custom Design</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label for="goldPurity">Gold Purity</label>
+            <select id="goldPurity" required>
+              <option value="22K">22K Gold (Traditional/Broad)</option>
+              <option value="18K">18K Gold (Modern/Diamond)</option>
+              <option value="Other">Custom specification</option>
+            </select>
+          </div>
+          <div class="form-group full-width">
+            <label for="designDetails">Design Notes &amp; Ideas</label>
+            <textarea id="designDetails" rows="5" required placeholder="Describe your design vision, weight preferences, or any specific details..."></textarea>
+          </div>
+          <button type="submit" class="submit-btn">
+            Send Design Enquiry via WhatsApp <i class="fa-brands fa-whatsapp"></i>
+          </button>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="footer-top">
+      <div class="container footer-grid">
+        <div class="footer-brand">
+          <div class="footer-logo">SK</div>
+          <p class="footer-name">SK jewellery & gold</p>
+          <p class="footer-tagline">Elegance Crafted in Gold Since 2016.</p>
+          <div class="footer-social">
+            <a href="tel:9443858836"><i class="fa-solid fa-phone"></i></a>
+            <a href="https://wa.me/919443858836" target="_blank"><i class="fa-brands fa-whatsapp"></i></a>
+            <a href="https://instagram.com" target="_blank"><i class="fa-brands fa-instagram"></i></a>
+          </div>
+        </div>
+        <div class="footer-links">
+          <h4>Quick Links</h4>
+          <ul>
+            <li><a href="index.html#home">Home</a></li>
+            <li><a href="index.html#about">About Us</a></li>
+            <li><a href="index.html#collections">Collections</a></li>
+            <li><a href="index.html#why-us">Why Choose Us</a></li>
+            <li><a href="index.html#testimonials">Customer Reviews</a></li>
+            <li><a href="index.html#contact">Contact Us</a></li>
+          </ul>
+        </div>
+        <div class="footer-contact">
+          <h4>Contact</h4>
+          <p><i class="fa-solid fa-phone"></i> 9443858836 / 9894246906</p>
+          <p><i class="fa-brands fa-whatsapp"></i> 9443858836</p>
+          <p><i class="fa-solid fa-envelope"></i> <a href="mailto:Skgold@gmail.com">Skgold@gmail.com</a></p>
+          <p><i class="fa-solid fa-location-dot"></i> No 47, Asarimar North Street,<br/>Meenakshipuram, Nagercoil – 629001,<br/>Tamil Nadu.</p>
+          <p><i class="fa-regular fa-clock"></i> 10:00 AM – 8:00 PM</p>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>© 2026 SK jewellery & gold. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <!-- FLOATING BUTTONS -->
+  <div class="float-btns">
+    <a href="https://wa.me/919443858836" target="_blank" class="float-btn whatsapp-float" title="WhatsApp">
+      <i class="fa-brands fa-whatsapp"></i>
+    </a>
+  </div>
+
+  <!-- BACK TO TOP -->
+  <button id="backToTop" title="Back to top"><i class="fa-solid fa-chevron-up"></i></button>
+
+  <script>
+    // ── NAVBAR SCROLL
+    const navbar = document.getElementById('navbar');
+    const navToggle = document.getElementById('navToggle');
+    const navLinks = document.getElementById('navLinks');
+
+    window.addEventListener('scroll', () => {
+      navbar.classList.toggle('scrolled', window.scrollY > 60);
+    });
+    navToggle.addEventListener('click', () => {
+      navLinks.classList.toggle('open');
+      navToggle.classList.toggle('active');
+    });
+    navLinks.querySelectorAll('a').forEach(link => {
+      link.addEventListener('click', () => {
+        navLinks.classList.remove('open');
+        navToggle.classList.remove('active');
+      });
+    });
+
+    // ── SCROLL REVEAL
+    const revealEls = document.querySelectorAll('.reveal, .reveal-left, .reveal-right');
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+          observer.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
+    revealEls.forEach(el => observer.observe(el));
+
+    // ── BACK TO TOP
+    const backToTop = document.getElementById('backToTop');
+    window.addEventListener('scroll', () => {
+      backToTop.classList.toggle('visible', window.scrollY > 400);
+    });
+    backToTop.addEventListener('click', () => {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    });
+
+    // ── WHATSAPP FORM SUBMISSION
+    const form = document.getElementById('customEnquiryForm');
+    form.addEventListener('submit', (e) => {
+      e.preventDefault();
+      const name = document.getElementById('fullName').value.trim();
+      const phone = document.getElementById('phoneNum').value.trim();
+      const type = document.getElementById('jewelType').value;
+      const purity = document.getElementById('goldPurity').value;
+      const details = document.getElementById('designDetails').value.trim();
+
+      const text = `Hello SK jewellery & gold,\n\nI want to make a customised jewellery piece.\n\n*Name:* ${name}\n*Phone:* ${phone}\n*Jewellery Type:* ${type}\n*Gold Purity:* ${purity}\n*Design Notes:* ${details}`;
+      const url = `https://wa.me/919443858836?text=${encodeURIComponent(text)}`;
+      window.open(url, '_blank');
+    });
+  </script>
+</body>
+</html>

@@ -1,0 +1,647 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Gold Bangle Collection – SK jewellery & gold</title>
+  <meta name="description" content="Explore SK jewellery & gold's exquisite Gold Bangle collection — from traditional Kada bangles to contemporary mesh bracelets, handcrafted in certified pure gold." />
+  <link rel="icon" type="image/jpeg" href="images/SK Gold Logo.jpg" />
+  <link rel="stylesheet" href="style.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;0,900;1,400;1,600&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+  <style>
+    /* ── BANGLE PAGE SPECIFIC STYLES ── */
+
+    /* Hero Banner */
+    .bangle-hero {
+      position: relative;
+      min-height: 56vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: linear-gradient(135deg, #1f1200 0%, #3a2200 60%, #523100 100%);
+      overflow: hidden;
+      padding: 120px 24px 80px;
+    }
+    .bangle-hero-bg {
+      position: absolute;
+      inset: 0;
+      background-image: url('images/Bangles.png');
+      background-size: cover;
+      background-position: center center;
+      opacity: 0.18;
+      filter: blur(2px);
+    }
+    .bangle-hero-pattern {
+      position: absolute;
+      inset: 0;
+      background-image:
+        radial-gradient(circle at 15% 50%, rgba(212,175,55,0.18) 0%, transparent 50%),
+        radial-gradient(circle at 85% 50%, rgba(212,175,55,0.12) 0%, transparent 50%);
+      pointer-events: none;
+    }
+    .bangle-hero-content {
+      position: relative;
+      z-index: 2;
+      text-align: center;
+      color: var(--white);
+    }
+    .bangle-hero-badge {
+      display: inline-block;
+      font-size: 11px;
+      letter-spacing: 4px;
+      text-transform: uppercase;
+      color: var(--gold-soft);
+      border: 1px solid rgba(212,175,55,0.5);
+      padding: 7px 22px;
+      border-radius: 50px;
+      margin-bottom: 28px;
+      backdrop-filter: blur(8px);
+      background: rgba(255,255,255,0.06);
+    }
+    .bangle-hero-title {
+      font-family: var(--font-display);
+      font-size: clamp(38px, 6vw, 72px);
+      font-weight: 900;
+      line-height: 1.05;
+      margin-bottom: 20px;
+    }
+    .bangle-hero-title span {
+      display: block;
+      color: var(--gold-soft);
+      font-style: italic;
+      font-size: clamp(24px, 3.5vw, 42px);
+      font-weight: 600;
+    }
+    .bangle-hero-desc {
+      font-size: clamp(14px, 1.6vw, 17px);
+      color: rgba(255,255,255,0.82);
+      max-width: 580px;
+      margin: 0 auto 36px;
+      line-height: 1.75;
+    }
+    .bangle-back-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 12px;
+      font-weight: 600;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      color: var(--gold-soft);
+      border: 1px solid rgba(212,175,55,0.45);
+      padding: 10px 24px;
+      border-radius: 2px;
+      transition: var(--transition);
+      backdrop-filter: blur(6px);
+      background: rgba(255,255,255,0.06);
+    }
+    .bangle-back-btn:hover {
+      background: var(--gold);
+      color: var(--maroon-dark);
+      border-color: var(--gold);
+    }
+
+    /* ── INTRO STRIP ── */
+    .bangle-intro {
+      background: var(--ivory);
+      padding: 48px 0;
+      text-align: center;
+      border-bottom: 1px solid rgba(212,175,55,0.2);
+    }
+    .bangle-intro-inner {
+      max-width: 760px;
+      margin: 0 auto;
+      padding: 0 24px;
+    }
+    .bangle-intro p {
+      font-family: var(--font-display);
+      font-size: clamp(16px, 2vw, 20px);
+      font-style: italic;
+      color: var(--maroon);
+      line-height: 1.7;
+    }
+    .bangle-intro-icons {
+      display: flex;
+      justify-content: center;
+      gap: 32px;
+      margin-top: 28px;
+      flex-wrap: wrap;
+    }
+    .bangle-intro-icon-item {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 8px;
+    }
+    .bangle-intro-icon-item i {
+      font-size: 22px;
+      color: var(--gold-dark);
+    }
+    .bangle-intro-icon-item span {
+      font-size: 11px;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      color: var(--text-light);
+      font-weight: 500;
+    }
+
+    /* ── COLLECTION GALLERY ── */
+    .bangle-collection {
+      background: #fff;
+      padding: 96px 0;
+    }
+    .bangle-collection .section-header {
+      margin-bottom: 72px;
+    }
+
+    /* Alternating full-width pieces */
+    .bangle-piece {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 0;
+      min-height: 520px;
+      margin-bottom: 8px;
+      overflow: hidden;
+      border: 1px solid rgba(212,175,55,0.15);
+    }
+    .bangle-piece:last-child { margin-bottom: 0; }
+    .bangle-piece.reverse { direction: rtl; }
+    .bangle-piece.reverse > * { direction: ltr; }
+
+    .bangle-piece-img {
+      position: relative;
+      overflow: hidden;
+      min-height: 460px;
+    }
+    .bangle-piece-img img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center center;
+      transition: transform 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+    .bangle-piece:hover .bangle-piece-img img {
+      transform: scale(1.06);
+    }
+    .bangle-piece-img-num {
+      position: absolute;
+      top: 24px;
+      left: 24px;
+      font-family: var(--font-display);
+      font-size: 64px;
+      font-weight: 900;
+      color: rgba(255,255,255,0.12);
+      line-height: 1;
+      pointer-events: none;
+      user-select: none;
+    }
+    .bangle-piece.reverse .bangle-piece-img-num {
+      left: auto;
+      right: 24px;
+    }
+
+    .bangle-piece-info {
+      padding: 60px 56px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      background: var(--white);
+      position: relative;
+    }
+    .bangle-piece.reverse .bangle-piece-info {
+      background: var(--ivory);
+    }
+    .bangle-piece-info::before {
+      content: '';
+      position: absolute;
+      top: 0; left: 0;
+      width: 4px;
+      height: 100%;
+      background: linear-gradient(to bottom, var(--gold), var(--gold-soft), transparent);
+    }
+    .bangle-piece.reverse .bangle-piece-info::before {
+      left: auto;
+      right: 0;
+    }
+
+    .bangle-piece-num {
+      font-family: var(--font-display);
+      font-size: 13px;
+      font-weight: 600;
+      letter-spacing: 4px;
+      color: var(--gold-dark);
+      text-transform: uppercase;
+      margin-bottom: 16px;
+    }
+    .bangle-piece-name {
+      font-family: var(--font-display);
+      font-size: clamp(24px, 2.8vw, 36px);
+      font-weight: 700;
+      color: var(--maroon);
+      line-height: 1.15;
+      margin-bottom: 16px;
+    }
+    .bangle-piece-name em {
+      font-style: italic;
+      color: var(--gold-dark);
+    }
+    .bangle-piece-divider {
+      width: 48px;
+      height: 2px;
+      background: linear-gradient(90deg, var(--gold), var(--gold-soft));
+      margin-bottom: 20px;
+      position: relative;
+    }
+    .bangle-piece-desc {
+      font-size: 15px;
+      color: var(--text-mid);
+      line-height: 1.85;
+      margin-bottom: 24px;
+    }
+    .bangle-piece-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-bottom: 32px;
+    }
+    .bangle-tag {
+      font-size: 11px;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+      font-weight: 600;
+      padding: 5px 14px;
+      border: 1px solid rgba(212,175,55,0.45);
+      border-radius: 50px;
+      color: var(--gold-dark);
+      background: rgba(212,175,55,0.06);
+    }
+    .bangle-piece-cta {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 12px;
+      font-weight: 600;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      padding: 13px 28px;
+      border-radius: 2px;
+      background: linear-gradient(135deg, var(--gold), var(--gold-soft));
+      color: var(--maroon-dark);
+      box-shadow: 0 4px 20px rgba(212,175,55,0.35);
+      transition: var(--transition);
+      width: fit-content;
+    }
+    .bangle-piece-cta:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 8px 30px rgba(212,175,55,0.55);
+    }
+
+    /* ── CTA BANNER ── */
+    .bangle-cta-banner {
+      background: linear-gradient(135deg, #3a2200 0%, #1f1200 100%);
+      padding: 80px 24px;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+    .bangle-cta-banner::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background-image: radial-gradient(circle at 50% 50%, rgba(212,175,55,0.14) 0%, transparent 65%);
+      pointer-events: none;
+    }
+    .bangle-cta-banner h2 {
+      font-family: var(--font-display);
+      font-size: clamp(28px, 4vw, 48px);
+      font-weight: 700;
+      color: var(--white);
+      margin-bottom: 14px;
+      position: relative;
+    }
+    .bangle-cta-banner h2 em {
+      color: var(--gold-soft);
+      font-style: italic;
+    }
+    .bangle-cta-banner p {
+      font-size: 16px;
+      color: rgba(255,255,255,0.78);
+      max-width: 520px;
+      margin: 0 auto 36px;
+      line-height: 1.7;
+      position: relative;
+    }
+    .bangle-cta-btns {
+      display: flex;
+      gap: 16px;
+      justify-content: center;
+      flex-wrap: wrap;
+      position: relative;
+    }
+    .btn-gold-light {
+      background: linear-gradient(135deg, var(--gold), var(--gold-soft));
+      color: var(--maroon-dark);
+      box-shadow: 0 4px 24px rgba(212,175,55,0.4);
+    }
+    .btn-gold-light:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 8px 32px rgba(212,175,55,0.65);
+    }
+    .btn-outline-light {
+      background: rgba(255,255,255,0.08);
+      color: var(--white);
+      border: 1px solid rgba(255,255,255,0.35);
+    }
+    .btn-outline-light:hover {
+      background: rgba(255,255,255,0.16);
+      border-color: var(--gold-soft);
+      color: var(--gold-soft);
+      transform: translateY(-2px);
+    }
+
+    /* ── RESPONSIVE ── */
+    @media (max-width: 900px) {
+      .bangle-piece,
+      .bangle-piece.reverse {
+        grid-template-columns: 1fr;
+        direction: ltr;
+      }
+      .bangle-piece.reverse > * { direction: ltr; }
+      .bangle-piece-img { min-height: 320px; }
+      .bangle-piece-info { padding: 40px 32px; }
+      .bangle-piece-info::before { width: 100%; height: 4px; top: 0; left: 0; right: auto; bottom: auto; }
+      .bangle-piece.reverse .bangle-piece-info::before { left: 0; right: auto; top: 0; height: 4px; width: 100%; }
+    }
+    @media (max-width: 600px) {
+      .bangle-hero { min-height: auto; padding: 110px 20px 70px; }
+      .bangle-piece-info { padding: 32px 24px; }
+      .bangle-intro-icons { gap: 20px; }
+      .bangle-collection { padding: 64px 0; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- NAVBAR -->
+  <nav id="navbar" class="navbar-dark-bg">
+    <div class="nav-container">
+      <a href="index.html" class="nav-brand">
+        <img src="images/SK Gold Logo.jpg" alt="SK Jewellery logo" class="nav-logo" />
+        <span class="brand-text">SK jewellery & gold</span>
+      </a>
+      <button class="nav-toggle" id="navToggle" aria-label="Toggle menu">
+        <span></span><span></span><span></span>
+      </button>
+      <ul class="nav-links" id="navLinks">
+        <li><a href="index.html#home">Home</a></li>
+        <li><a href="index.html#about">About</a></li>
+        <li><a href="index.html#collections">Collections</a></li>
+        <li><a href="index.html#why-us">Why Us</a></li>
+        <li><a href="index.html#testimonials">Reviews</a></li>
+        <li><a href="index.html#contact" class="nav-cta">Contact</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- HERO BANNER -->
+  <section class="bangle-hero">
+    <div class="bangle-hero-bg"></div>
+    <div class="bangle-hero-pattern"></div>
+    <div class="bangle-hero-content reveal">
+      <div class="bangle-hero-badge">✦ Gold Bangle Collection ✦</div>
+      <h1 class="bangle-hero-title">
+        Gold Bangles
+        <span>Traditional Grace on Your Wrists</span>
+      </h1>
+      <p class="bangle-hero-desc">
+        From resplendent antique Kadas to delicate contemporary designs, our bangle collection is handcrafted by master artisans to adorn your wrists with grace, value, and timeless style.
+      </p>
+      <a href="index.html#collections" class="bangle-back-btn">
+        <i class="fa-solid fa-arrow-left"></i> Back to Collections
+      </a>
+    </div>
+  </section>
+
+  <!-- INTRO STRIP -->
+  <div class="bangle-intro">
+    <div class="bangle-intro-inner">
+      <p>"Each bangle is a circle of joy — handcrafted gold that adorns your wrist with elegance and rings with the song of tradition."</p>
+      <div class="bangle-intro-icons">
+        <div class="bangle-intro-icon-item">
+          <i class="fa-solid fa-gem"></i>
+          <span>Certified Pure Gold</span>
+        </div>
+        <div class="bangle-intro-icon-item">
+          <i class="fa-solid fa-wand-magic-sparkles"></i>
+          <span>Handcrafted</span>
+        </div>
+        <div class="bangle-intro-icon-item">
+          <i class="fa-solid fa-layer-group"></i>
+          <span>All Sizes</span>
+        </div>
+        <div class="bangle-intro-icon-item">
+          <i class="fa-solid fa-indian-rupee-sign"></i>
+          <span>Affordable Luxury</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- COLLECTION GALLERY -->
+  <section class="bangle-collection">
+    <div class="container">
+      <div class="section-header reveal">
+        <p class="section-eyebrow">Gold Bangles</p>
+        <h2 class="section-title">Our Signature<br/><em>Bangle Pieces</em></h2>
+        <div class="gold-divider center"></div>
+        <p class="section-desc">Three stunning bangle designs, each a masterpiece of gold craftsmanship — for every occasion, every style, every woman.</p>
+      </div>
+    </div>
+
+    <!-- PIECE 1 -->
+    <div class="bangle-piece reveal">
+      <div class="bangle-piece-img">
+        <div class="bangle-piece-img-num">01</div>
+        <img src="images/Bangle-1.png" alt="Gold Bangle 1 – The Royal Antique Kada" loading="lazy" />
+      </div>
+      <div class="bangle-piece-info">
+        <p class="bangle-piece-num">✦ Collection 01</p>
+        <h2 class="bangle-piece-name">The Royal Antique<br/><em>Kada Bangle</em></h2>
+        <div class="bangle-piece-divider"></div>
+        <p class="bangle-piece-desc">
+          A majestic expression of traditional Indian royalty, this broad Kada bangle is handcrafted in 22-karat certified gold. Featuring a secure vintage clasp, it is adorned with micro-stamping, delicate gold wirework (filigree), and polished bezels. Designed to be worn as a statement piece, this Kada adds an unmatched regal grace to bridal wear and festive attire alike. An heirloom-quality creation that represents our master karigars' dedication to details.
+        </p>
+        <div class="bangle-piece-tags">
+          <span class="bangle-tag">22K Gold</span>
+          <span class="bangle-tag">Royal Kada</span>
+          <span class="bangle-tag">Antique Finish</span>
+          <span class="bangle-tag">Bridal Special</span>
+        </div>
+        <a href="index.html#contact" class="bangle-piece-cta">
+          Enquire Now <i class="fa-brands fa-whatsapp"></i>
+        </a>
+      </div>
+    </div>
+
+    <!-- PIECE 2 -->
+    <div class="bangle-piece reverse reveal">
+      <div class="bangle-piece-img">
+        <div class="bangle-piece-img-num">02</div>
+        <img src="images/Bangle-2.png" alt="Gold Bangle 2 – The Classic Nakshi Bracelet" loading="lazy" />
+      </div>
+      <div class="bangle-piece-info">
+        <p class="bangle-piece-num">✦ Collection 02</p>
+        <h2 class="bangle-piece-name">The Classic Nakshi<br/><em>Bangle Bracelet</em></h2>
+        <div class="bangle-piece-divider"></div>
+        <p class="bangle-piece-desc">
+          Crafted using the ancient Nakshi technique of hand-chasing gold, this bangle depicts beautiful floral vines and traditional patterns in high relief. The deep antique polish accentuates every hammer stroke, giving the gold a rich, warm glow. Perfect for layering with thinner glass bangles or wearing as a pair, this design brings classical charm to modern settings. Crafted in certified 22-karat gold with a comfortable inner comfort-fit finish.
+        </p>
+        <div class="bangle-piece-tags">
+          <span class="bangle-tag">22K Gold</span>
+          <span class="bangle-tag">Nakshi Work</span>
+          <span class="bangle-tag">Hand-Chased</span>
+          <span class="bangle-tag">Classic Style</span>
+        </div>
+        <a href="index.html#contact" class="bangle-piece-cta">
+          Enquire Now <i class="fa-brands fa-whatsapp"></i>
+        </a>
+      </div>
+    </div>
+
+    <!-- PIECE 3 -->
+    <div class="bangle-piece reveal">
+      <div class="bangle-piece-img">
+        <div class="bangle-piece-img-num">03</div>
+        <img src="images/Bangle-3.png" alt="Gold Bangle 3 – The Contemporary Mesh Bangle" loading="lazy" />
+      </div>
+      <div class="bangle-piece-info">
+        <p class="bangle-piece-num">✦ Collection 03</p>
+        <h2 class="bangle-piece-name">The Contemporary<br/><em>Mesh Bangle</em></h2>
+        <div class="bangle-piece-divider"></div>
+        <p class="bangle-piece-desc">
+          Where modern structural design meets traditional gold craftsmanship. This unique bangle features a delicate yet strong honeycomb mesh pattern that wraps comfortably around the wrist. The diamond-cut facets on the gold mesh catch and reflect light from every angle, creating a subtle sparkle. Made in 18-karat gold for extra durability and a lighter weight, it's the ideal choice for corporate events, parties, and everyday luxury.
+        </p>
+        <div class="bangle-piece-tags">
+          <span class="bangle-tag">18K Gold</span>
+          <span class="bangle-tag">Mesh Design</span>
+          <span class="bangle-tag">Modern Look</span>
+          <span class="bangle-tag">Everyday Wear</span>
+        </div>
+        <a href="index.html#contact" class="bangle-piece-cta">
+          Enquire Now <i class="fa-brands fa-whatsapp"></i>
+        </a>
+      </div>
+    </div>
+
+  </section>
+
+  <!-- CTA BANNER -->
+  <section class="bangle-cta-banner">
+    <h2>Design Your Dream<br/><em>Gold Bangles</em></h2>
+    <p>Have a design in mind? Our master craftsmen will bring your vision to life — fully customised, pure gold, and crafted exclusively for you.</p>
+    <div class="bangle-cta-btns">
+      <a href="https://wa.me/919443858836" target="_blank" class="btn btn-gold-light">
+        <i class="fa-brands fa-whatsapp"></i> WhatsApp Us
+      </a>
+      <a href="index.html#contact" class="btn btn-outline-light">
+        <i class="fa-solid fa-envelope"></i> Send a Message
+      </a>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="footer-top">
+      <div class="container footer-grid">
+        <div class="footer-brand">
+          <div class="footer-logo">SK</div>
+          <p class="footer-name">SK jewellery & gold</p>
+          <p class="footer-tagline">Elegance Crafted in Gold Since 2016.</p>
+          <div class="footer-social">
+            <a href="tel:9443858836"><i class="fa-solid fa-phone"></i></a>
+            <a href="https://wa.me/919443858836" target="_blank"><i class="fa-brands fa-whatsapp"></i></a>
+            <a href="https://instagram.com" target="_blank"><i class="fa-brands fa-instagram"></i></a>
+          </div>
+        </div>
+        <div class="footer-links">
+          <h4>Quick Links</h4>
+          <ul>
+            <li><a href="index.html#home">Home</a></li>
+            <li><a href="index.html#about">About Us</a></li>
+            <li><a href="index.html#collections">Collections</a></li>
+            <li><a href="index.html#why-us">Why Choose Us</a></li>
+            <li><a href="index.html#testimonials">Customer Reviews</a></li>
+            <li><a href="index.html#contact">Contact Us</a></li>
+          </ul>
+        </div>
+        <div class="footer-contact">
+          <h4>Contact</h4>
+          <p><i class="fa-solid fa-phone"></i> 9443858836 / 9894246906</p>
+          <p><i class="fa-brands fa-whatsapp"></i> 9443858836</p>
+          <p><i class="fa-solid fa-envelope"></i> <a href="mailto:Skgold@gmail.com">Skgold@gmail.com</a></p>
+          <p><i class="fa-solid fa-location-dot"></i> No 47, Asarimar North Street,<br/>Meenakshipuram, Nagercoil – 629001,<br/>Tamil Nadu.</p>
+          <p><i class="fa-regular fa-clock"></i> 10:00 AM – 8:00 PM</p>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>© 2026 SK jewellery & gold. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <!-- FLOATING BUTTONS -->
+  <div class="float-btns">
+    <a href="https://wa.me/919443858836" target="_blank" class="float-btn whatsapp-float" title="WhatsApp">
+      <i class="fa-brands fa-whatsapp"></i>
+    </a>
+  </div>
+
+  <!-- BACK TO TOP -->
+  <button id="backToTop" title="Back to top"><i class="fa-solid fa-chevron-up"></i></button>
+
+  <script>
+    // ── NAVBAR SCROLL
+    const navbar = document.getElementById('navbar');
+    const navToggle = document.getElementById('navToggle');
+    const navLinks = document.getElementById('navLinks');
+
+    window.addEventListener('scroll', () => {
+      navbar.classList.toggle('scrolled', window.scrollY > 60);
+    });
+    navToggle.addEventListener('click', () => {
+      navLinks.classList.toggle('open');
+      navToggle.classList.toggle('active');
+    });
+    navLinks.querySelectorAll('a').forEach(link => {
+      link.addEventListener('click', () => {
+        navLinks.classList.remove('open');
+        navToggle.classList.remove('active');
+      });
+    });
+
+    // ── SCROLL REVEAL
+    const revealEls = document.querySelectorAll('.reveal, .reveal-left, .reveal-right');
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+          observer.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
+    revealEls.forEach(el => observer.observe(el));
+
+    // ── BACK TO TOP
+    const backToTop = document.getElementById('backToTop');
+    window.addEventListener('scroll', () => {
+      backToTop.classList.toggle('visible', window.scrollY > 400);
+    });
+    backToTop.addEventListener('click', () => {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    });
+  </script>
+</body>
+</html>

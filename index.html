@@ -1,0 +1,465 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>SK jewellery & gold – Timeless Elegance Since 2016</title>
+  <link rel="icon" type="image/jpeg" href="images/SK Gold Logo.jpg" />
+  <link rel="stylesheet" href="style.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;0,900;1,400;1,600&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+</head>
+<body>
+
+  <!-- NAVBAR -->
+  <nav id="navbar">
+    <div class="nav-container">
+      <a href="#home" class="nav-brand">
+        <img src="images/SK Gold Logo.jpg" alt="SK Jewellery logo" class="nav-logo" />
+        <span class="brand-text">SK jewellery & gold</span>
+      </a>
+      <button class="nav-toggle" id="navToggle" aria-label="Toggle menu">
+        <span></span><span></span><span></span>
+      </button>
+      <ul class="nav-links" id="navLinks">
+        <li><a href="#home">Home</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#collections">Collections</a></li>
+        <li><a href="#why-us">Why Us</a></li>
+        <li><a href="#testimonials">Reviews</a></li>
+        <li><a href="#contact" class="nav-cta">Contact</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- HERO -->
+  <section id="home" class="hero">
+    <div class="hero-overlay"></div>
+    <canvas id="sparkleCanvas"></canvas>
+
+    <div class="hero-split">
+
+      <!-- LEFT: Image Carousel -->
+      <div class="hero-carousel-wrap">
+        <div class="hero-carousel" id="heroCarousel">
+
+          <div class="hero-slide active">
+            <img src="images/Hero-Section.png" alt="Grand Bridal Collection" />
+            <div class="hero-slide-caption">
+              <span class="hero-slide-tag">✦ Bridal</span>
+              <h3 class="hero-slide-title">Grand Bridal Collection</h3>
+              <p class="hero-slide-sub">Resplendent gold sets crafted to make your wedding day truly golden.</p>
+            </div>
+          </div>
+
+          <div class="hero-slide">
+            <img src="images/Hero-section-2.png" alt="Premium Jewellery" />
+            <div class="hero-slide-caption">
+              <span class="hero-slide-tag">✦ Premium</span>
+              <h3 class="hero-slide-title">Premium Jewellery</h3>
+              <p class="hero-slide-sub">Exquisite craftsmanship in certified gold — timeless elegance for every occasion.</p>
+            </div>
+          </div>
+
+          <div class="hero-slide">
+            <img src="images/Hero-Section-3.png" alt="Festival Collection" />
+            <div class="hero-slide-caption">
+              <span class="hero-slide-tag">✦ Festive</span>
+              <h3 class="hero-slide-title">Festival Collection</h3>
+              <p class="hero-slide-sub">Woman dressed for Diwali, wedding, or traditional celebration. Bright lamps, flowers, and festive decor.</p>
+            </div>
+          </div>
+
+        </div>
+
+        <!-- Prev / Next Arrows -->
+        <button class="hero-carousel-arrow hero-carousel-prev" id="heroPrev" aria-label="Previous slide">
+          <i class="fa-solid fa-chevron-left"></i>
+        </button>
+        <button class="hero-carousel-arrow hero-carousel-next" id="heroNext" aria-label="Next slide">
+          <i class="fa-solid fa-chevron-right"></i>
+        </button>
+
+        <!-- Slide Dots -->
+        <div class="hero-carousel-dots" id="heroCarouselDots">
+          <button class="hero-dot active" data-index="0" aria-label="Slide 1"></button>
+          <button class="hero-dot" data-index="1" aria-label="Slide 2"></button>
+          <button class="hero-dot" data-index="2" aria-label="Slide 3"></button>
+        </div>
+      </div>
+
+      <!-- RIGHT: Hero Text Content -->
+      <div class="hero-content reveal">
+        <div class="hero-badge">✦ Pure Gold · Certified Purity ✦</div>
+        <h1 class="hero-title">
+          <span class="hero-title-line hero-title-line--primary">Pure</span>
+          <span class="hero-title-line hero-title-line--secondary">Gold. Pure You.</span>
+        </h1>
+        <p class="hero-sub">Wholesale &amp; Retail &nbsp;·&nbsp; Nagercoil · Since 2016</p>
+        <p class="hero-tagline">Where Every Gram of Gold Tells a Story of Love &amp; Legacy</p>
+
+        <div class="hero-stats">
+          <div class="hero-stat">
+            <span class="hero-stat-num">10+</span>
+            <span class="hero-stat-label">Years of Trust</span>
+          </div>
+          <div class="hero-stat-divider"></div>
+          <div class="hero-stat">
+            <span class="hero-stat-num">1000+</span>
+            <span class="hero-stat-label">Happy Families</span>
+          </div>
+          <div class="hero-stat-divider"></div>
+          <div class="hero-stat">
+            <span class="hero-stat-num">500+</span>
+            <span class="hero-stat-label">Unique Designs</span>
+          </div>
+        </div>
+
+        <div class="hero-features">
+          <div class="hero-feature"><i class="fa-solid fa-certificate"></i> 22K &amp; 18K Certified Gold</div>
+          <div class="hero-feature"><i class="fa-solid fa-wand-magic-sparkles"></i> Bespoke Customisation</div>
+          <div class="hero-feature"><i class="fa-solid fa-truck"></i> Trusted Since 2016</div>
+        </div>
+
+        <div class="hero-buttons">
+          <a href="#collections" class="btn btn-gold"><i class="fa-solid fa-gem"></i> Explore Collections</a>
+          <a href="https://wa.me/919443858836" target="_blank" class="btn btn-outline"><i class="fa-brands fa-whatsapp"></i> WhatsApp Us</a>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- PROMO BAR -->
+  <div class="promo-bar">
+    <div class="promo-bar-content">
+      <span class="promo-item"><i class="fa-solid fa-percent"></i> Low Wastage All 365 Days</span>
+      <span class="promo-divider">|</span>
+      <span class="promo-item"><i class="fa-solid fa-certificate"></i> Trusted Quality Since 2016</span>
+    </div>
+  </div>
+
+
+  <!-- ABOUT -->
+  <section id="about" class="about section-pad">
+    <div class="about-bg-carousel" aria-hidden="true">
+      <div class="about-slide active" style="background-image: url('images/Bride-Background.png');"></div>
+      <div class="about-slide" style="background-image: url('images/Christian-Bride.png');"></div>
+      <div class="about-slide" style="background-image: url('images/Muslim-Bride.png');"></div>
+    </div>
+    <div class="about-overlay"></div>
+    <div class="container">
+      <div class="about-grid">
+        <div class="about-text reveal-right">
+          <p class="section-eyebrow">Our Heritage</p>
+          <h2 class="section-title">Crafting Dreams<br/><em>in Pure Gold</em></h2>
+          <div class="gold-divider"></div>
+          <p class="about-desc">At SK jewellery & gold, we blend the soul of traditional craftsmanship with the grace of modern design. Every piece we create carries a promise — of quality, beauty, and affordability that lasts a lifetime.</p>
+          <ul class="about-pillars">
+            <li><i class="fa-solid fa-star"></i> Expertise in Customized Jewellery</li>
+            <li><i class="fa-solid fa-star"></i> Quality and Affordable Jewellery</li>
+            <li><i class="fa-solid fa-star"></i> Traditional Craftsmanship with Modern Designs</li>
+          </ul>
+          <div class="counters">
+            <div class="counter-item">
+              <span class="counter-num" data-target="10">0</span><span>+</span>
+              <p>Years of Experience</p>
+            </div>
+            <div class="counter-item">
+              <span class="counter-num" data-target="1000">0</span><span>+</span>
+              <p>Happy Customers</p>
+            </div>
+            <div class="counter-item">
+              <span class="counter-num" data-target="500">0</span><span>+</span>
+              <p>Unique Designs</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- COLLECTIONS -->
+  <section id="collections" class="collections section-pad bg-ivory">
+    <div class="container">
+      <div class="section-header reveal">
+        <p class="section-eyebrow">Our Craft</p>
+        <h2 class="section-title">Signature<br/><em>Collections</em></h2>
+        <div class="gold-divider center"></div>
+        <p class="section-desc">Handpicked treasures for every occasion — from bridal grandeur to everyday grace.</p>
+      </div>
+      <div class="collections-grid">
+
+        <div class="col-card reveal">
+          <div class="col-img-wrap">
+            <img src="images/Bridal-Set.png" alt="Bridal Jewellery" loading="lazy" />
+          </div>
+          <div class="col-info">
+            <h3>Bridal Jewellery</h3>
+            <p>Resplendent sets crafted to make your wedding day truly golden.</p>
+            <a href="bridal.html" class="col-info-btn"><i class="fa-solid fa-gem"></i> View Collections</a>
+          </div>
+        </div>
+
+        <div class="col-card reveal">
+          <div class="col-img-wrap">
+            <img src="images/Necklace.png" alt="Gold Necklaces" loading="lazy" />
+          </div>
+          <div class="col-info">
+            <h3>Gold Necklaces</h3>
+            <p>From delicate chains to statement pieces — elegance around every neck.</p>
+            <a href="necklace.html" class="col-info-btn"><i class="fa-solid fa-gem"></i> View Collections</a>
+          </div>
+        </div>
+
+        <div class="col-card reveal">
+          <div class="col-img-wrap">
+            <img src="images/Bangles.png" alt="Bangles" loading="lazy" />
+          </div>
+          <div class="col-info">
+            <h3>Bangles</h3>
+            <p>The gentle music of gold bangles — a timeless tradition reimagined.</p>
+            <a href="bangle.html" class="col-info-btn"><i class="fa-solid fa-gem"></i> View Collections</a>
+          </div>
+        </div>
+
+        <div class="col-card reveal">
+          <div class="col-img-wrap">
+            <img src="images/Earing.png" alt="Earrings" loading="lazy" />
+          </div>
+          <div class="col-info">
+            <h3>Earrings</h3>
+            <p>Jhumkas to studs — every pair tells its own story of grace.</p>
+            <a href="earing.html" class="col-info-btn"><i class="fa-solid fa-gem"></i> View Collections</a>
+          </div>
+        </div>
+
+        <div class="col-card reveal">
+          <div class="col-img-wrap">
+            <img src="images/Ring.png" alt="Rings" loading="lazy" />
+          </div>
+          <div class="col-info">
+            <h3>Rings</h3>
+            <p>From engagement to everyday — rings that seal life's precious moments.</p>
+            <a href="ring.html" class="col-info-btn"><i class="fa-solid fa-gem"></i> View Collections</a>
+          </div>
+        </div>
+
+        <div class="col-card reveal">
+          <div class="col-img-wrap">
+            <img src="images/Customised-Jewels.png" alt="Customized Jewellery" loading="lazy" />
+          </div>
+          <div class="col-info">
+            <h3>Customized Jewellery</h3>
+            <p>Your vision, our craft — bespoke jewellery made just for you.</p>
+            <a href="customised-jewellery.html" class="col-info-btn"><i class="fa-solid fa-gem"></i> View Collections</a>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- FEATURED SHOWCASE -->
+  <section class="showcase section-pad">
+    <div class="showcase-pattern"></div>
+    <div class="container">
+      <div class="showcase-grid">
+        <div class="showcase-img reveal-left">
+          <img src="images/Hand-Crafted.png" alt="Exclusive handcrafted gold" loading="lazy" />
+        </div>
+        <div class="showcase-text reveal-right">
+          <p class="section-eyebrow">Featured</p>
+          <h2 class="section-title">Exclusive<br/><em>Handcrafted Gold</em><br/>Collections</h2>
+          <div class="gold-divider"></div>
+          <p>Each jewel leaving our workshop is a result of hours of meticulous craftsmanship — shaped by artisans who have honed their skills across generations. We use only certified gold to ensure every piece gleams with authenticity and stands the test of time.</p>
+          <a href="#collections" class="btn btn-gold mt-2">Discover More <i class="fa-solid fa-arrow-right"></i></a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- WHY CHOOSE US -->
+  <section id="why-us" class="why section-pad bg-ivory">
+    <div class="container">
+      <div class="section-header reveal">
+        <p class="section-eyebrow">Our Promise</p>
+        <h2 class="section-title">Why Choose<br/><em>SK jewellery & gold?</em></h2>
+        <div class="gold-divider center"></div>
+      </div>
+      <div class="why-grid">
+        <div class="why-card reveal">
+          <div class="why-icon"><i class="fa-solid fa-gem"></i></div>
+          <h3>Certified Quality</h3>
+          <p>Every gram of gold we use is certified and hallmarked for purity you can trust.</p>
+        </div>
+        <div class="why-card reveal">
+          <div class="why-icon"><i class="fa-solid fa-wand-magic-sparkles"></i></div>
+          <h3>Customized Designs</h3>
+          <p>Bring your dream design and our artisans will craft it to perfection.</p>
+        </div>
+        <div class="why-card reveal">
+          <div class="why-icon"><i class="fa-solid fa-crown"></i></div>
+          <h3>Traditional Craftsmanship</h3>
+          <p>Rooted in age-old techniques, every piece carries the warmth of handcraft.</p>
+        </div>
+        <div class="why-card reveal">
+          <div class="why-icon"><i class="fa-solid fa-indian-rupee-sign"></i></div>
+          <h3>Affordable Pricing</h3>
+          <p>Luxury shouldn't be out of reach. We offer the finest gold at fair prices.</p>
+        </div>
+        <div class="why-card reveal">
+          <div class="why-icon"><i class="fa-solid fa-handshake"></i></div>
+          <h3>Trusted Service</h3>
+          <p>Over 1000 happy customers since 2016 — their smiles are our greatest achievement.</p>
+        </div>
+        <div class="why-card reveal">
+          <div class="why-icon"><i class="fa-solid fa-gift"></i></div>
+          <h3>Perfect Gifts</h3>
+          <p>Whether a birthday, anniversary, or festival — gold is always the right gift.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- TESTIMONIALS -->
+  <section id="testimonials" class="testimonials section-pad">
+    <div class="container">
+      <div class="section-header reveal">
+        <p class="section-eyebrow">Customer Love</p>
+        <h2 class="section-title">What Our Customers<br/><em>Say</em></h2>
+        <div class="gold-divider center"></div>
+      </div>
+      <div class="testimonial-slider">
+        <div class="testimonial-track" id="testimonialTrack">
+
+          <div class="testimonial-card">
+            <div class="stars"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
+            <p class="testi-text">"Beautiful designs and excellent service. We ordered bridal jewellery and every piece was absolutely stunning. Highly recommended to all!"</p>
+            <div class="testi-author">
+              <div class="author-avatar">P</div>
+              <div><strong>Priya S.</strong><span>Bride, Nagercoil</span></div>
+            </div>
+          </div>
+
+          <div class="testimonial-card">
+            <div class="stars"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
+            <p class="testi-text">"The customized ring I got for my wife's anniversary was beyond our expectations. Pure quality, beautiful craftsmanship, and great pricing!"</p>
+            <div class="testi-author">
+              <div class="author-avatar">R</div>
+              <div><strong>Rajkumar M.</strong><span>Customer, Kanyakumari</span></div>
+            </div>
+          </div>
+
+          <div class="testimonial-card">
+            <div class="stars"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
+            <p class="testi-text">"SK jewellery & gold is our family's go-to jewellery shop. Trusted for years — the service, quality, and designs are always top class. Never disappointed!"</p>
+            <div class="testi-author">
+              <div class="author-avatar">L</div>
+              <div><strong>Lakshmi D.</strong><span>Regular Customer</span></div>
+            </div>
+          </div>
+
+          <div class="testimonial-card">
+            <div class="stars"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
+            <p class="testi-text">"The bangles I purchased for Diwali were pure gold and the finish was absolutely flawless. Will definitely return for more. Wonderful experience!"</p>
+            <div class="testi-author">
+              <div class="author-avatar">A</div>
+              <div><strong>Anitha K.</strong><span>Customer, Tirunelveli</span></div>
+            </div>
+          </div>
+
+        </div>
+        <div class="slider-controls">
+          <button class="slider-btn" id="prevBtn"><i class="fa-solid fa-chevron-left"></i></button>
+          <div class="slider-dots" id="sliderDots"></div>
+          <button class="slider-btn" id="nextBtn"><i class="fa-solid fa-chevron-right"></i></button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+  <section id="contact" class="contact section-pad bg-ivory">
+    <div class="container">
+      <div class="contact-grid">
+        <div class="contact-card reveal">
+          <div class="contact-info-block">
+            <h3>Send Us a Message</h3>
+            <form id="whatsappForm" class="whatsapp-form">
+              <label class="form-field">
+                <span>Your Name</span>
+                <input type="text" name="name" placeholder="Enter your name" required />
+              </label>
+              <label class="form-field">
+                <span>Your Phone</span>
+                <input type="tel" name="phone" placeholder="Enter your phone number" required />
+              </label>
+              <label class="form-field">
+                <span>Your Message</span>
+                <textarea name="message" placeholder="Tell us what you need" required></textarea>
+              </label>
+              <button type="submit" class="btn btn-gold">Send via WhatsApp</button>
+            </form>
+            <p class="form-note">Your details will open in WhatsApp so our team can reply quickly.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="footer-top">
+      <div class="container footer-grid">
+        <div class="footer-brand">
+          <div class="footer-logo">SK</div>
+          <p class="footer-name">SK jewellery & gold</p>
+          <p class="footer-tagline">Elegance Crafted in Gold Since 2016.</p>
+          <div class="footer-social">
+            <a href="tel:9443858836"><i class="fa-solid fa-phone"></i></a>
+            <a href="https://wa.me/919443858836" target="_blank"><i class="fa-brands fa-whatsapp"></i></a>
+            <a href="https://instagram.com" target="_blank"><i class="fa-brands fa-instagram"></i></a>
+          </div>
+        </div>
+        <div class="footer-links">
+          <h4>Quick Links</h4>
+          <ul>
+            <li><a href="#home">Home</a></li>
+            <li><a href="#about">About Us</a></li>
+            <li><a href="#collections">Collections</a></li>
+            <li><a href="#why-us">Why Choose Us</a></li>
+            <li><a href="#testimonials">Customer Reviews</a></li>
+            <li><a href="#contact">Contact Us</a></li>
+          </ul>
+        </div>
+        <div class="footer-contact">
+          <h4>Contact</h4>
+          <p><i class="fa-solid fa-phone"></i> 9443858836 / 9894246906</p>
+          <p><i class="fa-brands fa-whatsapp"></i> 9443858836</p>
+          <p><i class="fa-solid fa-envelope"></i> <a href="mailto:Skgold@gmail.com">Skgold@gmail.com</a></p>
+          <p><i class="fa-solid fa-location-dot"></i> No 47, Asarimar North Street,<br/>Meenakshipuram, Nagercoil – 629001,<br/>Tamil Nadu.</p>
+          <p><i class="fa-regular fa-clock"></i> 10:00 AM – 8:00 PM</p>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>© 2026 SK jewellery & gold. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <!-- FLOATING BUTTONS -->
+  <div class="float-btns">
+    <a href="https://wa.me/919443858836" target="_blank" class="float-btn whatsapp-float" title="WhatsApp">
+      <i class="fa-brands fa-whatsapp"></i>
+    </a>
+  </div>
+
+  <!-- BACK TO TOP -->
+  <button id="backToTop" title="Back to top"><i class="fa-solid fa-chevron-up"></i></button>
+
+  <script src="script.js"></script>
+</body>
+</html>

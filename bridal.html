@@ -1,0 +1,721 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Bridal Jewellery Collection – SK jewellery & gold</title>
+  <meta name="description" content="Explore SK jewellery & gold's exquisite Bridal Jewellery collection — resplendent sets crafted in pure gold to make every bride's special day truly golden." />
+  <link rel="icon" type="image/jpeg" href="images/SK Gold Logo.jpg" />
+  <link rel="stylesheet" href="style.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;0,900;1,400;1,600&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+  <style>
+    /* ── BRIDAL PAGE SPECIFIC STYLES ── */
+
+    /* Hero Banner */
+    .bridal-hero {
+      position: relative;
+      min-height: 56vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: linear-gradient(135deg, var(--maroon-dark) 0%, #3d0010 60%, #1a0005 100%);
+      overflow: hidden;
+      padding: 120px 24px 80px;
+    }
+    .bridal-hero-bg {
+      position: absolute;
+      inset: 0;
+      background-image: url('images/Bridal-Set.png');
+      background-size: cover;
+      background-position: center top;
+      opacity: 0.18;
+      filter: blur(2px);
+    }
+    .bridal-hero-pattern {
+      position: absolute;
+      inset: 0;
+      background-image:
+        radial-gradient(circle at 15% 50%, rgba(212,175,55,0.15) 0%, transparent 50%),
+        radial-gradient(circle at 85% 50%, rgba(212,175,55,0.10) 0%, transparent 50%);
+      pointer-events: none;
+    }
+    .bridal-hero-content {
+      position: relative;
+      z-index: 2;
+      text-align: center;
+      color: var(--white);
+    }
+    .bridal-hero-badge {
+      display: inline-block;
+      font-size: 11px;
+      letter-spacing: 4px;
+      text-transform: uppercase;
+      color: var(--gold-soft);
+      border: 1px solid rgba(212,175,55,0.5);
+      padding: 7px 22px;
+      border-radius: 50px;
+      margin-bottom: 28px;
+      backdrop-filter: blur(8px);
+      background: rgba(255,255,255,0.06);
+    }
+    .bridal-hero-title {
+      font-family: var(--font-display);
+      font-size: clamp(38px, 6vw, 72px);
+      font-weight: 900;
+      line-height: 1.05;
+      margin-bottom: 20px;
+    }
+    .bridal-hero-title span {
+      display: block;
+      color: var(--gold-soft);
+      font-style: italic;
+      font-size: clamp(24px, 3.5vw, 42px);
+      font-weight: 600;
+    }
+    .bridal-hero-desc {
+      font-size: clamp(14px, 1.6vw, 17px);
+      color: rgba(255,255,255,0.82);
+      max-width: 580px;
+      margin: 0 auto 36px;
+      line-height: 1.75;
+    }
+    .bridal-back-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 12px;
+      font-weight: 600;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      color: var(--gold-soft);
+      border: 1px solid rgba(212,175,55,0.45);
+      padding: 10px 24px;
+      border-radius: 2px;
+      transition: var(--transition);
+      backdrop-filter: blur(6px);
+      background: rgba(255,255,255,0.06);
+    }
+    .bridal-back-btn:hover {
+      background: var(--gold);
+      color: var(--maroon-dark);
+      border-color: var(--gold);
+    }
+
+    /* ── INTRO STRIP ── */
+    .bridal-intro {
+      background: var(--ivory);
+      padding: 48px 0;
+      text-align: center;
+      border-bottom: 1px solid rgba(212,175,55,0.2);
+    }
+    .bridal-intro-inner {
+      max-width: 760px;
+      margin: 0 auto;
+      padding: 0 24px;
+    }
+    .bridal-intro p {
+      font-family: var(--font-display);
+      font-size: clamp(16px, 2vw, 20px);
+      font-style: italic;
+      color: var(--maroon);
+      line-height: 1.7;
+    }
+    .bridal-intro-icons {
+      display: flex;
+      justify-content: center;
+      gap: 32px;
+      margin-top: 28px;
+      flex-wrap: wrap;
+    }
+    .bridal-intro-icon-item {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 8px;
+    }
+    .bridal-intro-icon-item i {
+      font-size: 22px;
+      color: var(--gold-dark);
+    }
+    .bridal-intro-icon-item span {
+      font-size: 11px;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      color: var(--text-light);
+      font-weight: 500;
+    }
+
+    /* ── COLLECTION GALLERY ── */
+    .bridal-collection {
+      background: #fff;
+      padding: 96px 0;
+    }
+    .bridal-collection .section-header {
+      margin-bottom: 72px;
+    }
+
+    /* Alternating full-width pieces */
+    .bridal-piece {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 0;
+      min-height: 520px;
+      margin-bottom: 8px;
+      overflow: hidden;
+      border: 1px solid rgba(212,175,55,0.15);
+    }
+    .bridal-piece:last-child { margin-bottom: 0; }
+    .bridal-piece.reverse { direction: rtl; }
+    .bridal-piece.reverse > * { direction: ltr; }
+
+    .bridal-piece-img {
+      position: relative;
+      overflow: hidden;
+      min-height: 460px;
+    }
+    .bridal-piece-img img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center top;
+      transition: transform 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+    .bridal-piece:hover .bridal-piece-img img {
+      transform: scale(1.06);
+    }
+    .bridal-piece-img-num {
+      position: absolute;
+      top: 24px;
+      left: 24px;
+      font-family: var(--font-display);
+      font-size: 64px;
+      font-weight: 900;
+      color: rgba(255,255,255,0.12);
+      line-height: 1;
+      pointer-events: none;
+      user-select: none;
+    }
+    .bridal-piece.reverse .bridal-piece-img-num {
+      left: auto;
+      right: 24px;
+    }
+
+    .bridal-piece-info {
+      padding: 60px 56px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      background: var(--white);
+      position: relative;
+    }
+    .bridal-piece.reverse .bridal-piece-info {
+      background: var(--ivory);
+    }
+    .bridal-piece-info::before {
+      content: '';
+      position: absolute;
+      top: 0; left: 0;
+      width: 4px;
+      height: 100%;
+      background: linear-gradient(to bottom, var(--gold), var(--gold-soft), transparent);
+    }
+    .bridal-piece.reverse .bridal-piece-info::before {
+      left: auto;
+      right: 0;
+    }
+
+    .bridal-piece-num {
+      font-family: var(--font-display);
+      font-size: 13px;
+      font-weight: 600;
+      letter-spacing: 4px;
+      color: var(--gold-dark);
+      text-transform: uppercase;
+      margin-bottom: 16px;
+    }
+    .bridal-piece-name {
+      font-family: var(--font-display);
+      font-size: clamp(24px, 2.8vw, 36px);
+      font-weight: 700;
+      color: var(--maroon);
+      line-height: 1.15;
+      margin-bottom: 16px;
+    }
+    .bridal-piece-name em {
+      font-style: italic;
+      color: var(--gold-dark);
+    }
+    .bridal-piece-divider {
+      width: 48px;
+      height: 2px;
+      background: linear-gradient(90deg, var(--gold), var(--gold-soft));
+      margin-bottom: 20px;
+      position: relative;
+    }
+    .bridal-piece-desc {
+      font-size: 15px;
+      color: var(--text-mid);
+      line-height: 1.85;
+      margin-bottom: 24px;
+    }
+    .bridal-piece-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-bottom: 32px;
+    }
+    .bridal-tag {
+      font-size: 11px;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+      font-weight: 600;
+      padding: 5px 14px;
+      border: 1px solid rgba(212,175,55,0.45);
+      border-radius: 50px;
+      color: var(--gold-dark);
+      background: rgba(212,175,55,0.06);
+    }
+    .bridal-piece-cta {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 12px;
+      font-weight: 600;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      padding: 13px 28px;
+      border-radius: 2px;
+      background: linear-gradient(135deg, var(--gold), var(--gold-soft));
+      color: var(--maroon-dark);
+      box-shadow: 0 4px 20px rgba(212,175,55,0.35);
+      transition: var(--transition);
+      width: fit-content;
+    }
+    .bridal-piece-cta:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 8px 30px rgba(212,175,55,0.55);
+    }
+
+    /* ── CTA BANNER ── */
+    .bridal-cta-banner {
+      background: linear-gradient(135deg, var(--maroon) 0%, var(--maroon-dark) 100%);
+      padding: 80px 24px;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+    .bridal-cta-banner::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background-image: radial-gradient(circle at 50% 50%, rgba(212,175,55,0.12) 0%, transparent 65%);
+      pointer-events: none;
+    }
+    .bridal-cta-banner h2 {
+      font-family: var(--font-display);
+      font-size: clamp(28px, 4vw, 48px);
+      font-weight: 700;
+      color: var(--white);
+      margin-bottom: 14px;
+      position: relative;
+    }
+    .bridal-cta-banner h2 em {
+      color: var(--gold-soft);
+      font-style: italic;
+    }
+    .bridal-cta-banner p {
+      font-size: 16px;
+      color: rgba(255,255,255,0.78);
+      max-width: 520px;
+      margin: 0 auto 36px;
+      line-height: 1.7;
+      position: relative;
+    }
+    .bridal-cta-btns {
+      display: flex;
+      gap: 16px;
+      justify-content: center;
+      flex-wrap: wrap;
+      position: relative;
+    }
+    .btn-gold-light {
+      background: linear-gradient(135deg, var(--gold), var(--gold-soft));
+      color: var(--maroon-dark);
+      box-shadow: 0 4px 24px rgba(212,175,55,0.4);
+    }
+    .btn-gold-light:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 8px 32px rgba(212,175,55,0.65);
+    }
+    .btn-outline-light {
+      background: rgba(255,255,255,0.08);
+      color: var(--white);
+      border: 1px solid rgba(255,255,255,0.35);
+    }
+    .btn-outline-light:hover {
+      background: rgba(255,255,255,0.16);
+      border-color: var(--gold-soft);
+      color: var(--gold-soft);
+      transform: translateY(-2px);
+    }
+
+    /* ── RESPONSIVE ── */
+    @media (max-width: 900px) {
+      .bridal-piece,
+      .bridal-piece.reverse {
+        grid-template-columns: 1fr;
+        direction: ltr;
+      }
+      .bridal-piece.reverse > * { direction: ltr; }
+      .bridal-piece-img { min-height: 320px; }
+      .bridal-piece-info { padding: 40px 32px; }
+      .bridal-piece-info::before { width: 100%; height: 4px; top: 0; left: 0; right: auto; bottom: auto; }
+      .bridal-piece.reverse .bridal-piece-info::before { left: 0; right: auto; top: 0; height: 4px; width: 100%; }
+    }
+    @media (max-width: 600px) {
+      .bridal-hero { min-height: auto; padding: 110px 20px 70px; }
+      .bridal-piece-info { padding: 32px 24px; }
+      .bridal-intro-icons { gap: 20px; }
+      .bridal-collection { padding: 64px 0; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- NAVBAR -->
+  <nav id="navbar" class="navbar-dark-bg">
+    <div class="nav-container">
+      <a href="index.html" class="nav-brand">
+        <img src="images/SK Gold Logo.jpg" alt="SK Jewellery logo" class="nav-logo" />
+        <span class="brand-text">SK jewellery & gold</span>
+      </a>
+      <button class="nav-toggle" id="navToggle" aria-label="Toggle menu">
+        <span></span><span></span><span></span>
+      </button>
+      <ul class="nav-links" id="navLinks">
+        <li><a href="index.html#home">Home</a></li>
+        <li><a href="index.html#about">About</a></li>
+        <li><a href="index.html#collections">Collections</a></li>
+        <li><a href="index.html#why-us">Why Us</a></li>
+        <li><a href="index.html#testimonials">Reviews</a></li>
+        <li><a href="index.html#contact" class="nav-cta">Contact</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- HERO BANNER -->
+  <section class="bridal-hero">
+    <div class="bridal-hero-bg"></div>
+    <div class="bridal-hero-pattern"></div>
+    <div class="bridal-hero-content reveal">
+      <div class="bridal-hero-badge">✦ Bridal Collection ✦</div>
+      <h1 class="bridal-hero-title">
+        Bridal Jewellery
+        <span>A Golden Beginning</span>
+      </h1>
+      <p class="bridal-hero-desc">
+        Every bride deserves to shine in gold that matches the radiance of her moment.
+        Our bridal sets are crafted with love, tradition, and uncompromising purity —
+        designed to be cherished across generations.
+      </p>
+      <a href="index.html#collections" class="bridal-back-btn">
+        <i class="fa-solid fa-arrow-left"></i> Back to Collections
+      </a>
+    </div>
+  </section>
+
+  <!-- INTRO STRIP -->
+  <div class="bridal-intro">
+    <div class="bridal-intro-inner">
+      <p>"Each bridal set is a labour of devotion — where traditional artistry meets the joy of a new beginning, all in pure, certified gold."</p>
+      <div class="bridal-intro-icons">
+        <div class="bridal-intro-icon-item">
+          <i class="fa-solid fa-gem"></i>
+          <span>Certified Pure Gold</span>
+        </div>
+        <div class="bridal-intro-icon-item">
+          <i class="fa-solid fa-wand-magic-sparkles"></i>
+          <span>Handcrafted</span>
+        </div>
+        <div class="bridal-intro-icon-item">
+          <i class="fa-solid fa-crown"></i>
+          <span>Traditional Designs</span>
+        </div>
+        <div class="bridal-intro-icon-item">
+          <i class="fa-solid fa-heart"></i>
+          <span>Made with Love</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- COLLECTION GALLERY -->
+  <section class="bridal-collection">
+    <div class="container">
+      <div class="section-header reveal">
+        <p class="section-eyebrow">Bridal Jewellery</p>
+        <h2 class="section-title">Our Signature<br/><em>Bridal Pieces</em></h2>
+        <div class="gold-divider center"></div>
+        <p class="section-desc">Five exquisite bridal jewellery sets, each telling its own story of grandeur, love, and timeless gold elegance.</p>
+      </div>
+    </div>
+
+    <!-- PIECE 1 -->
+    <div class="bridal-piece reveal">
+      <div class="bridal-piece-img">
+        <div class="bridal-piece-img-num">01</div>
+        <img src="images/Bridal-1.png" alt="Bridal Set 1 – The Royal Haar Collection" loading="lazy" />
+      </div>
+      <div class="bridal-piece-info">
+        <p class="bridal-piece-num">✦ Collection 01</p>
+        <h2 class="bridal-piece-name">The Royal Haar<br/><em>Bridal Set</em></h2>
+        <div class="bridal-piece-divider"></div>
+        <p class="bridal-piece-desc">
+          A majestic bridal set that embodies regal splendour, featuring a statement long necklace
+          adorned with intricate gold filigree work. Each link is hand-set by master craftsmen,
+          ensuring every bride commands the room the moment she enters. Paired with matching
+          chandelier earrings that cascade with golden grace, this set is the timeless choice for
+          a grand Tamil wedding entrance. Crafted in 22-karat certified gold.
+        </p>
+        <div class="bridal-piece-tags">
+          <span class="bridal-tag">22K Gold</span>
+          <span class="bridal-tag">Necklace Set</span>
+          <span class="bridal-tag">Traditional</span>
+          <span class="bridal-tag">Tamil Bridal</span>
+        </div>
+        <a href="index.html#contact" class="bridal-piece-cta">
+          Enquire Now <i class="fa-brands fa-whatsapp"></i>
+        </a>
+      </div>
+    </div>
+
+    <!-- PIECE 2 -->
+    <div class="bridal-piece reverse reveal">
+      <div class="bridal-piece-img">
+        <div class="bridal-piece-img-num">02</div>
+        <img src="images/Bridal-2.png" alt="Bridal Set 2 – The Lakshmi Jadai Collection" loading="lazy" />
+      </div>
+      <div class="bridal-piece-info">
+        <p class="bridal-piece-num">✦ Collection 02</p>
+        <h2 class="bridal-piece-name">The Lakshmi Jadai<br/><em>Bridal Set</em></h2>
+        <div class="bridal-piece-divider"></div>
+        <p class="bridal-piece-desc">
+          Inspired by the divine elegance of Goddess Lakshmi, this bridal set features a glorious
+          temple-jewellery necklace crafted with embossed lotus motifs and ruby-toned stone
+          accents set in pure gold. The accompanying jhumka earrings and tikka headpiece create
+          a complete bridal ensemble that radiates South Indian heritage. A beloved choice for
+          traditional Hindu brides who wish to carry blessings and beauty on their wedding day.
+        </p>
+        <div class="bridal-piece-tags">
+          <span class="bridal-tag">22K Gold</span>
+          <span class="bridal-tag">Temple Jewellery</span>
+          <span class="bridal-tag">Jadai Set</span>
+          <span class="bridal-tag">Hindu Bridal</span>
+        </div>
+        <a href="index.html#contact" class="bridal-piece-cta">
+          Enquire Now <i class="fa-brands fa-whatsapp"></i>
+        </a>
+      </div>
+    </div>
+
+    <!-- PIECE 3 -->
+    <div class="bridal-piece reveal">
+      <div class="bridal-piece-img">
+        <div class="bridal-piece-img-num">03</div>
+        <img src="images/Bridal-3.png" alt="Bridal Set 3 – The Mughal Elegance Collection" loading="lazy" />
+      </div>
+      <div class="bridal-piece-info">
+        <p class="bridal-piece-num">✦ Collection 03</p>
+        <h2 class="bridal-piece-name">The Mughal Elegance<br/><em>Bridal Set</em></h2>
+        <div class="bridal-piece-divider"></div>
+        <p class="bridal-piece-desc">
+          Blending the opulence of Mughal craftsmanship with South Indian bridal sensibility,
+          this stunning set features a multi-layered choker accented with intricate kundan-inspired
+          motifs worked entirely in gold. The long matching maang tikka and layered bangles complete
+          this enchanting bridal look. Perfect for Christian and Muslim brides seeking a regal,
+          gold-forward aesthetic that honours their heritage with understated modern sophistication.
+        </p>
+        <div class="bridal-piece-tags">
+          <span class="bridal-tag">22K Gold</span>
+          <span class="bridal-tag">Choker Set</span>
+          <span class="bridal-tag">Multi-layer</span>
+          <span class="bridal-tag">Modern Heritage</span>
+        </div>
+        <a href="index.html#contact" class="bridal-piece-cta">
+          Enquire Now <i class="fa-brands fa-whatsapp"></i>
+        </a>
+      </div>
+    </div>
+
+    <!-- PIECE 4 -->
+    <div class="bridal-piece reverse reveal">
+      <div class="bridal-piece-img">
+        <div class="bridal-piece-img-num">04</div>
+        <img src="images/Bridal-4.png" alt="Bridal Set 4 – The Grand Mango Mala Collection" loading="lazy" />
+      </div>
+      <div class="bridal-piece-info">
+        <p class="bridal-piece-num">✦ Collection 04</p>
+        <h2 class="bridal-piece-name">The Grand Mango Mala<br/><em>Bridal Set</em></h2>
+        <div class="bridal-piece-divider"></div>
+        <p class="bridal-piece-desc">
+          The mango mala is a cornerstone of South Indian bridal jewellery, symbolising
+          prosperity and abundance. This breathtaking long necklace features hand-hammered
+          mango-shaped gold pendants linked in a seamless cascade, finished with a broad gold
+          pendant at the centre. Complemented by a matching pair of gold jhumkas and a gold
+          nathia, this set is ideal for brides who seek drama, tradition, and unmatched grandeur
+          on their most memorable day.
+        </p>
+        <div class="bridal-piece-tags">
+          <span class="bridal-tag">22K Gold</span>
+          <span class="bridal-tag">Mango Mala</span>
+          <span class="bridal-tag">Long Necklace</span>
+          <span class="bridal-tag">Grand Bridal</span>
+        </div>
+        <a href="index.html#contact" class="bridal-piece-cta">
+          Enquire Now <i class="fa-brands fa-whatsapp"></i>
+        </a>
+      </div>
+    </div>
+
+    <!-- PIECE 5 -->
+    <div class="bridal-piece reveal">
+      <div class="bridal-piece-img">
+        <div class="bridal-piece-img-num">05</div>
+        <img src="images/Bridal-5.png" alt="Bridal Set 5 – The Minimalist Radiance Collection" loading="lazy" />
+      </div>
+      <div class="bridal-piece-info">
+        <p class="bridal-piece-num">✦ Collection 05</p>
+        <h2 class="bridal-piece-name">The Minimalist Radiance<br/><em>Bridal Set</em></h2>
+        <div class="bridal-piece-divider"></div>
+        <p class="bridal-piece-desc">
+          For the modern bride who values refined elegance over grandeur, this contemporary bridal
+          set celebrates the beauty of clean lines and lustrous gold surfaces. A sleek gold
+          diamond-cut necklace paired with delicate drop earrings and a slim gold bangle set — 
+          crafted for brides who wish to make a quietly confident statement. This versatile set
+          transitions effortlessly from the wedding ceremony to the reception, ensuring you
+          look radiant at every moment of your celebration.
+        </p>
+        <div class="bridal-piece-tags">
+          <span class="bridal-tag">22K Gold</span>
+          <span class="bridal-tag">Contemporary</span>
+          <span class="bridal-tag">Minimal Bridal</span>
+          <span class="bridal-tag">Everyday Elegance</span>
+        </div>
+        <a href="index.html#contact" class="bridal-piece-cta">
+          Enquire Now <i class="fa-brands fa-whatsapp"></i>
+        </a>
+      </div>
+    </div>
+
+  </section>
+
+  <!-- CTA BANNER -->
+  <section class="bridal-cta-banner">
+    <h2>Create Your Dream<br/><em>Bridal Set</em></h2>
+    <p>Can't find exactly what you envision? Our master craftsmen will bring your dream bridal jewellery to life — fully customised, pure gold, and crafted just for you.</p>
+    <div class="bridal-cta-btns">
+      <a href="https://wa.me/919443858836" target="_blank" class="btn btn-gold-light">
+        <i class="fa-brands fa-whatsapp"></i> WhatsApp Us
+      </a>
+      <a href="index.html#contact" class="btn btn-outline-light">
+        <i class="fa-solid fa-envelope"></i> Send a Message
+      </a>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="footer-top">
+      <div class="container footer-grid">
+        <div class="footer-brand">
+          <div class="footer-logo">SK</div>
+          <p class="footer-name">SK jewellery & gold</p>
+          <p class="footer-tagline">Elegance Crafted in Gold Since 2016.</p>
+          <div class="footer-social">
+            <a href="tel:9443858836"><i class="fa-solid fa-phone"></i></a>
+            <a href="https://wa.me/919443858836" target="_blank"><i class="fa-brands fa-whatsapp"></i></a>
+            <a href="https://instagram.com" target="_blank"><i class="fa-brands fa-instagram"></i></a>
+          </div>
+        </div>
+        <div class="footer-links">
+          <h4>Quick Links</h4>
+          <ul>
+            <li><a href="index.html#home">Home</a></li>
+            <li><a href="index.html#about">About Us</a></li>
+            <li><a href="index.html#collections">Collections</a></li>
+            <li><a href="index.html#why-us">Why Choose Us</a></li>
+            <li><a href="index.html#testimonials">Customer Reviews</a></li>
+            <li><a href="index.html#contact">Contact Us</a></li>
+          </ul>
+        </div>
+        <div class="footer-contact">
+          <h4>Contact</h4>
+          <p><i class="fa-solid fa-phone"></i> 9443858836 / 9894246906</p>
+          <p><i class="fa-brands fa-whatsapp"></i> 9443858836</p>
+          <p><i class="fa-solid fa-envelope"></i> <a href="mailto:Skgold@gmail.com">Skgold@gmail.com</a></p>
+          <p><i class="fa-solid fa-location-dot"></i> No 47, Asarimar North Street,<br/>Meenakshipuram, Nagercoil – 629001,<br/>Tamil Nadu.</p>
+          <p><i class="fa-regular fa-clock"></i> 10:00 AM – 8:00 PM</p>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>© 2026 SK jewellery & gold. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <!-- FLOATING BUTTONS -->
+  <div class="float-btns">
+    <a href="https://wa.me/919443858836" target="_blank" class="float-btn whatsapp-float" title="WhatsApp">
+      <i class="fa-brands fa-whatsapp"></i>
+    </a>
+  </div>
+
+  <!-- BACK TO TOP -->
+  <button id="backToTop" title="Back to top"><i class="fa-solid fa-chevron-up"></i></button>
+
+  <script>
+    // ── NAVBAR SCROLL
+    const navbar = document.getElementById('navbar');
+    const navToggle = document.getElementById('navToggle');
+    const navLinks = document.getElementById('navLinks');
+
+    window.addEventListener('scroll', () => {
+      navbar.classList.toggle('scrolled', window.scrollY > 60);
+    });
+    navToggle.addEventListener('click', () => {
+      navLinks.classList.toggle('open');
+      navToggle.classList.toggle('active');
+    });
+    navLinks.querySelectorAll('a').forEach(link => {
+      link.addEventListener('click', () => {
+        navLinks.classList.remove('open');
+        navToggle.classList.remove('active');
+      });
+    });
+
+    // ── SCROLL REVEAL
+    const revealEls = document.querySelectorAll('.reveal, .reveal-left, .reveal-right');
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+          observer.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
+    revealEls.forEach(el => observer.observe(el));
+
+    // ── BACK TO TOP
+    const backToTop = document.getElementById('backToTop');
+    window.addEventListener('scroll', () => {
+      backToTop.classList.toggle('visible', window.scrollY > 400);
+    });
+    backToTop.addEventListener('click', () => {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    });
+  </script>
+</body>
+</html>

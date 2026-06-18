@@ -1,0 +1,647 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Gold Earring Collection – SK jewellery & gold</title>
+  <meta name="description" content="Explore SK jewellery & gold's exquisite Gold Earring collection — from traditional temple Jhumkas to contemporary geometric studs, handcrafted in certified pure gold." />
+  <link rel="icon" type="image/jpeg" href="images/SK Gold Logo.jpg" />
+  <link rel="stylesheet" href="style.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;0,900;1,400;1,600&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+  <style>
+    /* ── EARRING PAGE SPECIFIC STYLES ── */
+
+    /* Hero Banner */
+    .earing-hero {
+      position: relative;
+      min-height: 56vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: linear-gradient(135deg, #170712 0%, #3a112d 60%, #541941 100%);
+      overflow: hidden;
+      padding: 120px 24px 80px;
+    }
+    .earing-hero-bg {
+      position: absolute;
+      inset: 0;
+      background-image: url('images/Earing.png');
+      background-size: cover;
+      background-position: center center;
+      opacity: 0.18;
+      filter: blur(2px);
+    }
+    .earing-hero-pattern {
+      position: absolute;
+      inset: 0;
+      background-image:
+        radial-gradient(circle at 15% 50%, rgba(212,175,55,0.18) 0%, transparent 50%),
+        radial-gradient(circle at 85% 50%, rgba(212,175,55,0.12) 0%, transparent 50%);
+      pointer-events: none;
+    }
+    .earing-hero-content {
+      position: relative;
+      z-index: 2;
+      text-align: center;
+      color: var(--white);
+    }
+    .earing-hero-badge {
+      display: inline-block;
+      font-size: 11px;
+      letter-spacing: 4px;
+      text-transform: uppercase;
+      color: var(--gold-soft);
+      border: 1px solid rgba(212,175,55,0.5);
+      padding: 7px 22px;
+      border-radius: 50px;
+      margin-bottom: 28px;
+      backdrop-filter: blur(8px);
+      background: rgba(255,255,255,0.06);
+    }
+    .earing-hero-title {
+      font-family: var(--font-display);
+      font-size: clamp(38px, 6vw, 72px);
+      font-weight: 900;
+      line-height: 1.05;
+      margin-bottom: 20px;
+    }
+    .earing-hero-title span {
+      display: block;
+      color: var(--gold-soft);
+      font-style: italic;
+      font-size: clamp(24px, 3.5vw, 42px);
+      font-weight: 600;
+    }
+    .earing-hero-desc {
+      font-size: clamp(14px, 1.6vw, 17px);
+      color: rgba(255,255,255,0.82);
+      max-width: 580px;
+      margin: 0 auto 36px;
+      line-height: 1.75;
+    }
+    .earing-back-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 12px;
+      font-weight: 600;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      color: var(--gold-soft);
+      border: 1px solid rgba(212,175,55,0.45);
+      padding: 10px 24px;
+      border-radius: 2px;
+      transition: var(--transition);
+      backdrop-filter: blur(6px);
+      background: rgba(255,255,255,0.06);
+    }
+    .earing-back-btn:hover {
+      background: var(--gold);
+      color: var(--maroon-dark);
+      border-color: var(--gold);
+    }
+
+    /* ── INTRO STRIP ── */
+    .earing-intro {
+      background: var(--ivory);
+      padding: 48px 0;
+      text-align: center;
+      border-bottom: 1px solid rgba(212,175,55,0.2);
+    }
+    .earing-intro-inner {
+      max-width: 760px;
+      margin: 0 auto;
+      padding: 0 24px;
+    }
+    .earing-intro p {
+      font-family: var(--font-display);
+      font-size: clamp(16px, 2vw, 20px);
+      font-style: italic;
+      color: var(--maroon);
+      line-height: 1.7;
+    }
+    .earing-intro-icons {
+      display: flex;
+      justify-content: center;
+      gap: 32px;
+      margin-top: 28px;
+      flex-wrap: wrap;
+    }
+    .earing-intro-icon-item {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 8px;
+    }
+    .earing-intro-icon-item i {
+      font-size: 22px;
+      color: var(--gold-dark);
+    }
+    .earing-intro-icon-item span {
+      font-size: 11px;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      color: var(--text-light);
+      font-weight: 500;
+    }
+
+    /* ── COLLECTION GALLERY ── */
+    .earing-collection {
+      background: #fff;
+      padding: 96px 0;
+    }
+    .earing-collection .section-header {
+      margin-bottom: 72px;
+    }
+
+    /* Alternating full-width pieces */
+    .earing-piece {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 0;
+      min-height: 520px;
+      margin-bottom: 8px;
+      overflow: hidden;
+      border: 1px solid rgba(212,175,55,0.15);
+    }
+    .earing-piece:last-child { margin-bottom: 0; }
+    .earing-piece.reverse { direction: rtl; }
+    .earing-piece.reverse > * { direction: ltr; }
+
+    .earing-piece-img {
+      position: relative;
+      overflow: hidden;
+      min-height: 460px;
+    }
+    .earing-piece-img img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center center;
+      transition: transform 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+    .earing-piece:hover .earing-piece-img img {
+      transform: scale(1.06);
+    }
+    .earing-piece-img-num {
+      position: absolute;
+      top: 24px;
+      left: 24px;
+      font-family: var(--font-display);
+      font-size: 64px;
+      font-weight: 900;
+      color: rgba(255,255,255,0.12);
+      line-height: 1;
+      pointer-events: none;
+      user-select: none;
+    }
+    .earing-piece.reverse .earing-piece-img-num {
+      left: auto;
+      right: 24px;
+    }
+
+    .earing-piece-info {
+      padding: 60px 56px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      background: var(--white);
+      position: relative;
+    }
+    .earing-piece.reverse .earing-piece-info {
+      background: var(--ivory);
+    }
+    .earing-piece-info::before {
+      content: '';
+      position: absolute;
+      top: 0; left: 0;
+      width: 4px;
+      height: 100%;
+      background: linear-gradient(to bottom, var(--gold), var(--gold-soft), transparent);
+    }
+    .earing-piece.reverse .earing-piece-info::before {
+      left: auto;
+      right: 0;
+    }
+
+    .earing-piece-num {
+      font-family: var(--font-display);
+      font-size: 13px;
+      font-weight: 600;
+      letter-spacing: 4px;
+      color: var(--gold-dark);
+      text-transform: uppercase;
+      margin-bottom: 16px;
+    }
+    .earing-piece-name {
+      font-family: var(--font-display);
+      font-size: clamp(24px, 2.8vw, 36px);
+      font-weight: 700;
+      color: var(--maroon);
+      line-height: 1.15;
+      margin-bottom: 16px;
+    }
+    .earing-piece-name em {
+      font-style: italic;
+      color: var(--gold-dark);
+    }
+    .earing-piece-divider {
+      width: 48px;
+      height: 2px;
+      background: linear-gradient(90deg, var(--gold), var(--gold-soft));
+      margin-bottom: 20px;
+      position: relative;
+    }
+    .earing-piece-desc {
+      font-size: 15px;
+      color: var(--text-mid);
+      line-height: 1.85;
+      margin-bottom: 24px;
+    }
+    .earing-piece-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-bottom: 32px;
+    }
+    .earing-tag {
+      font-size: 11px;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+      font-weight: 600;
+      padding: 5px 14px;
+      border: 1px solid rgba(212,175,55,0.45);
+      border-radius: 50px;
+      color: var(--gold-dark);
+      background: rgba(212,175,55,0.06);
+    }
+    .earing-piece-cta {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 12px;
+      font-weight: 600;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      padding: 13px 28px;
+      border-radius: 2px;
+      background: linear-gradient(135deg, var(--gold), var(--gold-soft));
+      color: var(--maroon-dark);
+      box-shadow: 0 4px 20px rgba(212,175,55,0.35);
+      transition: var(--transition);
+      width: fit-content;
+    }
+    .earing-piece-cta:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 8px 30px rgba(212,175,55,0.55);
+    }
+
+    /* ── CTA BANNER ── */
+    .earing-cta-banner {
+      background: linear-gradient(135deg, #3a112d 0%, #170712 100%);
+      padding: 80px 24px;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+    .earing-cta-banner::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background-image: radial-gradient(circle at 50% 50%, rgba(212,175,55,0.14) 0%, transparent 65%);
+      pointer-events: none;
+    }
+    .earing-cta-banner h2 {
+      font-family: var(--font-display);
+      font-size: clamp(28px, 4vw, 48px);
+      font-weight: 700;
+      color: var(--white);
+      margin-bottom: 14px;
+      position: relative;
+    }
+    .earing-cta-banner h2 em {
+      color: var(--gold-soft);
+      font-style: italic;
+    }
+    .earing-cta-banner p {
+      font-size: 16px;
+      color: rgba(255,255,255,0.78);
+      max-width: 520px;
+      margin: 0 auto 36px;
+      line-height: 1.7;
+      position: relative;
+    }
+    .earing-cta-btns {
+      display: flex;
+      gap: 16px;
+      justify-content: center;
+      flex-wrap: wrap;
+      position: relative;
+    }
+    .btn-gold-light {
+      background: linear-gradient(135deg, var(--gold), var(--gold-soft));
+      color: var(--maroon-dark);
+      box-shadow: 0 4px 24px rgba(212,175,55,0.4);
+    }
+    .btn-gold-light:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 8px 32px rgba(212,175,55,0.65);
+    }
+    .btn-outline-light {
+      background: rgba(255,255,255,0.08);
+      color: var(--white);
+      border: 1px solid rgba(255,255,255,0.35);
+    }
+    .btn-outline-light:hover {
+      background: rgba(255,255,255,0.16);
+      border-color: var(--gold-soft);
+      color: var(--gold-soft);
+      transform: translateY(-2px);
+    }
+
+    /* ── RESPONSIVE ── */
+    @media (max-width: 900px) {
+      .earing-piece,
+      .earing-piece.reverse {
+        grid-template-columns: 1fr;
+        direction: ltr;
+      }
+      .earing-piece.reverse > * { direction: ltr; }
+      .earing-piece-img { min-height: 320px; }
+      .earing-piece-info { padding: 40px 32px; }
+      .earing-piece-info::before { width: 100%; height: 4px; top: 0; left: 0; right: auto; bottom: auto; }
+      .earing-piece.reverse .earing-piece-info::before { left: 0; right: auto; top: 0; height: 4px; width: 100%; }
+    }
+    @media (max-width: 600px) {
+      .earing-hero { min-height: auto; padding: 110px 20px 70px; }
+      .earing-piece-info { padding: 32px 24px; }
+      .earing-intro-icons { gap: 20px; }
+      .earing-collection { padding: 64px 0; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- NAVBAR -->
+  <nav id="navbar" class="navbar-dark-bg">
+    <div class="nav-container">
+      <a href="index.html" class="nav-brand">
+        <img src="images/SK Gold Logo.jpg" alt="SK Jewellery logo" class="nav-logo" />
+        <span class="brand-text">SK jewellery & gold</span>
+      </a>
+      <button class="nav-toggle" id="navToggle" aria-label="Toggle menu">
+        <span></span><span></span><span></span>
+      </button>
+      <ul class="nav-links" id="navLinks">
+        <li><a href="index.html#home">Home</a></li>
+        <li><a href="index.html#about">About</a></li>
+        <li><a href="index.html#collections">Collections</a></li>
+        <li><a href="index.html#why-us">Why Us</a></li>
+        <li><a href="index.html#testimonials">Reviews</a></li>
+        <li><a href="index.html#contact" class="nav-cta">Contact</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- HERO BANNER -->
+  <section class="earing-hero">
+    <div class="earing-hero-bg"></div>
+    <div class="earing-hero-pattern"></div>
+    <div class="earing-hero-content reveal">
+      <div class="earing-hero-badge">✦ Gold Earring Collection ✦</div>
+      <h1 class="earing-hero-title">
+        Gold Earrings
+        <span>Whispers of Elegance</span>
+      </h1>
+      <p class="earing-hero-desc">
+        From magnificent traditional Jhumkas and Chandbalis to minimalist modern studs, our earrings collection features exquisite details crafted in certified gold to complement your beauty.
+      </p>
+      <a href="index.html#collections" class="earing-back-btn">
+        <i class="fa-solid fa-arrow-left"></i> Back to Collections
+      </a>
+    </div>
+  </section>
+
+  <!-- INTRO STRIP -->
+  <div class="earing-intro">
+    <div class="earing-intro-inner">
+      <p>"Like whispers of gold, our earrings frame your face with delicate beauty, translating centuries of craftsmanship into modern elegance."</p>
+      <div class="earing-intro-icons">
+        <div class="earing-intro-icon-item">
+          <i class="fa-solid fa-gem"></i>
+          <span>Certified Pure Gold</span>
+        </div>
+        <div class="earing-intro-icon-item">
+          <i class="fa-solid fa-wand-magic-sparkles"></i>
+          <span>Handcrafted</span>
+        </div>
+        <div class="earing-intro-icon-item">
+          <i class="fa-solid fa-layer-group"></i>
+          <span>All Styles</span>
+        </div>
+        <div class="earing-intro-icon-item">
+          <i class="fa-solid fa-indian-rupee-sign"></i>
+          <span>Affordable Luxury</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- COLLECTION GALLERY -->
+  <section class="earing-collection">
+    <div class="container">
+      <div class="section-header reveal">
+        <p class="section-eyebrow">Gold Earrings</p>
+        <h2 class="section-title">Our Signature<br/><em>Earring Pieces</em></h2>
+        <div class="gold-divider center"></div>
+        <p class="section-desc">Three breathtaking earring pairs, designed with precision and passion — for weddings, festivals, and everyday grace.</p>
+      </div>
+    </div>
+
+    <!-- PIECE 1 -->
+    <div class="earing-piece reveal">
+      <div class="earing-piece-img">
+        <div class="earing-piece-img-num">01</div>
+        <img src="images/Earing-1.png" alt="Gold Earring 1 – The Royal Jhumka Drop" loading="lazy" />
+      </div>
+      <div class="earing-piece-info">
+        <p class="earing-piece-num">✦ Collection 01</p>
+        <h2 class="earing-piece-name">The Royal Jhumka<br/><em>Drop Earrings</em></h2>
+        <div class="earing-piece-divider"></div>
+        <p class="earing-piece-desc">
+          A traditional South Indian masterpiece, these Jhumkas are meticulously handcrafted in 22-karat certified gold. Featuring a classic stud with intricate peacock motifs, the earring descends into a grand dome drop adorned with gold beads that sway gently with every move. Perfect for brides, festivals, and traditional celebrations, these Jhumkas capture the grandeur of temple artistry and stand as a signature heirloom piece.
+        </p>
+        <div class="earing-piece-tags">
+          <span class="earing-tag">22K Gold</span>
+          <span class="earing-tag">Jhumka Style</span>
+          <span class="earing-tag">Temple Work</span>
+          <span class="earing-tag">Bridal Favourite</span>
+        </div>
+        <a href="index.html#contact" class="earing-piece-cta">
+          Enquire Now <i class="fa-brands fa-whatsapp"></i>
+        </a>
+      </div>
+    </div>
+
+    <!-- PIECE 2 -->
+    <div class="earing-piece reverse reveal">
+      <div class="earing-piece-img">
+        <div class="earing-piece-img-num">02</div>
+        <img src="images/Earing-2.png" alt="Gold Earring 2 – The Antique Gold Chandbali" loading="lazy" />
+      </div>
+      <div class="earing-piece-info">
+        <p class="earing-piece-num">✦ Collection 02</p>
+        <h2 class="earing-piece-name">The Antique Gold<br/><em>Chandbali Earrings</em></h2>
+        <div class="earing-piece-divider"></div>
+        <p class="earing-piece-desc">
+          Inspired by royal court designs, these Chandbalis combine crescent moon elegance with detailed filigree and micro-bead embroidery. The antique polish gives the 22-karat gold a warm, deep tone that accentuates the layered textures of the design. Perfect for wedding receptions, dinners, and festive celebrations, they pair beautifully with traditional silk sarees and lehengas.
+        </p>
+        <div class="earing-piece-tags">
+          <span class="earing-tag">22K Gold</span>
+          <span class="earing-tag">Chandbali</span>
+          <span class="earing-tag">Antique Finish</span>
+          <span class="earing-tag">Statement Pair</span>
+        </div>
+        <a href="index.html#contact" class="earing-piece-cta">
+          Enquire Now <i class="fa-brands fa-whatsapp"></i>
+        </a>
+      </div>
+    </div>
+
+    <!-- PIECE 3 -->
+    <div class="earing-piece reveal">
+      <div class="earing-piece-img">
+        <div class="earing-piece-img-num">03</div>
+        <img src="images/Earing-3.png" alt="Gold Earring 3 – The Contemporary Stud Drops" loading="lazy" />
+      </div>
+      <div class="earing-piece-info">
+        <p class="earing-piece-num">✦ Collection 03</p>
+        <h2 class="earing-piece-name">The Contemporary<br/><em>Stud Drops</em></h2>
+        <div class="earing-piece-divider"></div>
+        <p class="earing-piece-desc">
+          Designed for the modern woman who values subtlety and style. These elegant studs feature a diamond-cut geometric drop that catches light with every angle. Crafted in 18-karat gold for durability and lightweight comfort, they transition effortlessly from a day at the office to an evening dinner party. A chic addition to any jewellery collection.
+        </p>
+        <div class="earing-piece-tags">
+          <span class="earing-tag">18K Gold</span>
+          <span class="earing-tag">Stud Drops</span>
+          <span class="earing-tag">Modern Design</span>
+          <span class="earing-tag">Everyday Wear</span>
+        </div>
+        <a href="index.html#contact" class="earing-piece-cta">
+          Enquire Now <i class="fa-brands fa-whatsapp"></i>
+        </a>
+      </div>
+    </div>
+
+  </section>
+
+  <!-- CTA BANNER -->
+  <section class="earing-cta-banner">
+    <h2>Design Your Dream<br/><em>Gold Earrings</em></h2>
+    <p>Have a design in mind? Our master craftsmen will bring your vision to life — fully customised, pure gold, and crafted exclusively for you.</p>
+    <div class="earing-cta-btns">
+      <a href="https://wa.me/919443858836" target="_blank" class="btn btn-gold-light">
+        <i class="fa-brands fa-whatsapp"></i> WhatsApp Us
+      </a>
+      <a href="index.html#contact" class="btn btn-outline-light">
+        <i class="fa-solid fa-envelope"></i> Send a Message
+      </a>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="footer-top">
+      <div class="container footer-grid">
+        <div class="footer-brand">
+          <div class="footer-logo">SK</div>
+          <p class="footer-name">SK jewellery & gold</p>
+          <p class="footer-tagline">Elegance Crafted in Gold Since 2016.</p>
+          <div class="footer-social">
+            <a href="tel:9443858836"><i class="fa-solid fa-phone"></i></a>
+            <a href="https://wa.me/919443858836" target="_blank"><i class="fa-brands fa-whatsapp"></i></a>
+            <a href="https://instagram.com" target="_blank"><i class="fa-brands fa-instagram"></i></a>
+          </div>
+        </div>
+        <div class="footer-links">
+          <h4>Quick Links</h4>
+          <ul>
+            <li><a href="index.html#home">Home</a></li>
+            <li><a href="index.html#about">About Us</a></li>
+            <li><a href="index.html#collections">Collections</a></li>
+            <li><a href="index.html#why-us">Why Choose Us</a></li>
+            <li><a href="index.html#testimonials">Customer Reviews</a></li>
+            <li><a href="index.html#contact">Contact Us</a></li>
+          </ul>
+        </div>
+        <div class="footer-contact">
+          <h4>Contact</h4>
+          <p><i class="fa-solid fa-phone"></i> 9443858836 / 9894246906</p>
+          <p><i class="fa-brands fa-whatsapp"></i> 9443858836</p>
+          <p><i class="fa-solid fa-envelope"></i> <a href="mailto:Skgold@gmail.com">Skgold@gmail.com</a></p>
+          <p><i class="fa-solid fa-location-dot"></i> No 47, Asarimar North Street,<br/>Meenakshipuram, Nagercoil – 629001,<br/>Tamil Nadu.</p>
+          <p><i class="fa-regular fa-clock"></i> 10:00 AM – 8:00 PM</p>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>© 2026 SK jewellery & gold. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <!-- FLOATING BUTTONS -->
+  <div class="float-btns">
+    <a href="https://wa.me/919443858836" target="_blank" class="float-btn whatsapp-float" title="WhatsApp">
+      <i class="fa-brands fa-whatsapp"></i>
+    </a>
+  </div>
+
+  <!-- BACK TO TOP -->
+  <button id="backToTop" title="Back to top"><i class="fa-solid fa-chevron-up"></i></button>
+
+  <script>
+    // ── NAVBAR SCROLL
+    const navbar = document.getElementById('navbar');
+    const navToggle = document.getElementById('navToggle');
+    const navLinks = document.getElementById('navLinks');
+
+    window.addEventListener('scroll', () => {
+      navbar.classList.toggle('scrolled', window.scrollY > 60);
+    });
+    navToggle.addEventListener('click', () => {
+      navLinks.classList.toggle('open');
+      navToggle.classList.toggle('active');
+    });
+    navLinks.querySelectorAll('a').forEach(link => {
+      link.addEventListener('click', () => {
+        navLinks.classList.remove('open');
+        navToggle.classList.remove('active');
+      });
+    });
+
+    // ── SCROLL REVEAL
+    const revealEls = document.querySelectorAll('.reveal, .reveal-left, .reveal-right');
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+          observer.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
+    revealEls.forEach(el => observer.observe(el));
+
+    // ── BACK TO TOP
+    const backToTop = document.getElementById('backToTop');
+    window.addEventListener('scroll', () => {
+      backToTop.classList.toggle('visible', window.scrollY > 400);
+    });
+    backToTop.addEventListener('click', () => {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    });
+  </script>
+</body>
+</html>
