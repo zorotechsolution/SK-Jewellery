@@ -2,12 +2,6 @@
    SK JEWELLERY & GOLD — script.js
    ============================================================ */
 
-// ── LOADING SCREEN ──────────────────────────────────────────
-window.addEventListener('load', () => {
-  setTimeout(() => {
-    document.getElementById('loader').classList.add('hidden');
-  }, 2000);
-});
 
 // ── NAVBAR ──────────────────────────────────────────────────
 const navbar = document.getElementById('navbar');
