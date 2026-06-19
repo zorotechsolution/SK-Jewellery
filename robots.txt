@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://skgoldjewellers.com/sitemap.xml
