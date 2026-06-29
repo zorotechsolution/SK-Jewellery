@@ -40,7 +40,7 @@ if (whatsappForm) {
     if (!name || !phone || !message) return;
 
     const whatsappText = `Hello SK jewellery & gold,\n\nName: ${name}\nPhone: ${phone}\nMessage: ${message}`;
-    const whatsappUrl = `https://wa.me/919443858836?text=${encodeURIComponent(whatsappText)}`;
+    const whatsappUrl = `https://wa.me/917812839506?text=${encodeURIComponent(whatsappText)}`;
     window.open(whatsappUrl, '_blank');
   });
 }
